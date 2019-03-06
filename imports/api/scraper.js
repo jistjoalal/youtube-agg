@@ -42,7 +42,7 @@ const parseVid = (vidHtml, channelId, channelTitle) => {
 
   // strip video id + make url
   const href = parseAttr('.spf-link > .yt-uix-sessionlink', 'href');
-  const videoId = href.split('=')[1];
+  const _id = href.split('=')[1];
   const url = 'https://youtube.com' + href;
 
   // parse viewCount as int
@@ -54,13 +54,13 @@ const parseVid = (vidHtml, channelId, channelTitle) => {
   const durInSec = parseDuration(duration);
 
   return {
+    _id, url,
+
     channelId, channelTitle,
 
-    postedAgo, postedTime,
+    postedTime,
     
     viewCount, viewInt,
-
-    url, videoId,
 
     duration, durInSec,
 

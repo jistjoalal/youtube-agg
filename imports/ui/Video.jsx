@@ -18,7 +18,7 @@ export default class Video extends React.Component {
 
         { open ?
           <div className="d-flex justify-content-center align-items-start w-100">
-            <VideoEmbed videoId={video.videoId} />
+            <VideoEmbed _id={video._id} />
             <button className="btn btn-outline-danger ml-3 p-1"
               onClick={this.close}>&times;</button>
           </div>

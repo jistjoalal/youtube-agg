@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 export default VideoDescription = ({ video }) => {
+  const postedAgo = moment(video.postedTime).fromNow();
   return (
     <>
       <a href={video.url} target="blank">
@@ -11,7 +13,7 @@ export default VideoDescription = ({ video }) => {
         <h5 className="text-muted">{video.channelTitle}</h5>
       </Link>
       <span className="text-muted">
-        {video.duration} - {video.viewCount} - {video.postedAgo}
+        {video.duration} - {video.viewCount} - {postedAgo}
       </span>
     </>
   );

@@ -16,3 +16,6 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - polling system to request channels be added
 - research annoying youtube API
 - refactor
+
+## bugs
+- sorting gets whacked when clickign sort buttons after implementing pub/sub

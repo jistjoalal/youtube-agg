@@ -10,7 +10,7 @@ export default TitleBar = ({ children, title }) => {
           Home
         </Link>
       }
-      <h1 className="serif font-weight-light">{title}</h1>
+      <h1 className="serif font-weight-light m-0">{title}</h1>
       {children}
     </nav>
   );
