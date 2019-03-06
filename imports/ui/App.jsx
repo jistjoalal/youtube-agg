@@ -29,6 +29,7 @@ export default class App extends React.Component {
   }
   render() {
     const { sortBy, reverse, page } = this.state;
+    const query = this.props.query || {};
     return (
       <div className="bg-light d-flex flex-column justify-content-center">
         <TitleBar title="IDW">
@@ -39,7 +40,7 @@ export default class App extends React.Component {
           </div>
         </TitleBar>
 
-        <VideoList sortBy={sortBy} reverse={reverse} page={page} />
+        <VideoList query={query} sortBy={sortBy} reverse={reverse} page={page} />
 
         { this.renderPageControls() }
       </div>

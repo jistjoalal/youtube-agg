@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default VideoDescription = ({ video }) => {
   return (
@@ -6,7 +7,9 @@ export default VideoDescription = ({ video }) => {
       <a href={video.url} >
         <h4>{video.title}</h4>
       </a>
-      <h5 className="text-muted">{video.channelTitle}</h5>
+      <Link to={`/channel/${video.channelId}`}>
+        <h5 className="text-muted">{video.channelTitle}</h5>
+      </Link>
       <span className="text-muted">
         {video.duration} - {video.viewCount} - {video.postedAgo}
       </span>

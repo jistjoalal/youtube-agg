@@ -33,6 +33,6 @@ const VideoListTracker = withTracker((
       },
     ).fetch(),
   }
-})(VideoList);
+});
 
-export default VideoListTracker;
+export default VideoListTracker(VideoList);

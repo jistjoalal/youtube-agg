@@ -9,8 +9,9 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - <s>sorting</s>
 - <s>pagination</s>
 - <s>auto scroll on bottom of page setting</s>
-- filters
+- <s>filtering</s>
 - secure/pub-sub
 - style w/ bootstrap
 - deploy to heroku
 - polling system to request channels be added
+- refactor
