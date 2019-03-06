@@ -14,4 +14,5 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - style w/ bootstrap
 - deploy to heroku
 - polling system to request channels be added
+- research annoying youtube API
 - refactor
