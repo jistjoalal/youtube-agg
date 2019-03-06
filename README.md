@@ -8,8 +8,8 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - <s>embedded playback</s>
 - <s>sorting</s>
 - <s>pagination</s>
+- auto scroll on bottom of page setting
 - filters
-- add more channels
 - secure/pub-sub
 - style w/ bootstrap
 - deploy to heroku

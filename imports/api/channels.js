@@ -27,4 +27,24 @@ export const CHANNEL_IDS = [
     title: 'Mike Nayna',
     id: 'UCzk08fzh5c_BhjQa1w35wtA',
   },
+  {
+    title: 'Sam Harris',
+    id: 'UCNAxrHudMfdzNi6NxruKPLw',
+  },
+  {
+    title: 'Ben Shapiro',
+    id: 'UCnQC_G5Xsjhp9fEJKuIcrSw',
+  },
+  {
+    title: 'Lindsay Shepherd',
+    id: 'UCTjxmzChimJa3X_rAgLAnxg',
+  },
+  {
+    title: 'Sargon of Akkad',
+    id: 'UC-yewGHQbNFpDrGM0diZOLA',
+  },
+  {
+    title: 'Gad Saad',
+    id: 'UCLH7qUqM0PLieCVaHA7RegA',
+  }
 ];
