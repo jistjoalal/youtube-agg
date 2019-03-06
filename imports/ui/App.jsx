@@ -9,6 +9,8 @@ const COL_TEXT = {
   'durInSec': 'Duration',
 };
 
+const SortArrow = ({ reverse }) => reverse ? ' ^' : ' v';
+
 export default class App extends React.Component {
   constructor() {
     super();
@@ -16,7 +18,14 @@ export default class App extends React.Component {
       sortBy: 'postedTime',
       reverse: false,
       page: 1,
+      autoScroll: false,
     };
+  }
+  componentDidMount() {
+    document.addEventListener('scroll', this.handleScroll);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleScroll);
   }
   render() {
     const { sortBy, reverse, page } = this.state;
@@ -37,21 +46,23 @@ export default class App extends React.Component {
     )
   }
   renderPageControls() {
+    const { autoScroll } = this.state;
     return (
-      <div className="d-flex justify-content-around m-1">
+      <div className="d-flex justify-content-around m-1 fixed-bottom">
         <a className="btn btn-secondary" href="#">
           Top
         </a>
         <button className="btn btn-secondary" onClick={this.nextPage}>
           More
         </button>
+        <button className="btn btn-secondary">
+          <label className="m-0">
+            <input type="checkbox" checked={autoScroll} onChange={this.toggleAutoScroll}/>
+            &nbsp;Scroll ∞ 
+          </label>
+        </button>
       </div>
     )
-  }
-  nextPage = _ => {
-    this.setState(state => ({
-      page: state.page + 1,
-    }));
   }
   renderSortButton = col => {
     const { reverse, sortBy } = this.state;
@@ -64,6 +75,25 @@ export default class App extends React.Component {
       </button>
     )
   }
+  handleScroll = event => {
+    const { autoScroll } = this.state;
+    const e = event.target.scrollingElement;
+    const atBottom = e.scrollHeight - e.scrollTop === e.clientHeight;
+    if (atBottom && autoScroll) {
+      this.nextPage();
+    }
+  }
+  toggleAutoScroll = _ => {
+    this.setState(state => ({
+      autoScroll: !state.autoScroll,
+      page: state.page + +!state.autoScroll,
+    }));
+  }
+  nextPage = _ => {
+    this.setState(state => ({
+      page: state.page + 1,
+    }));
+  }
   changeSort = sortBy => _ => {
     this.setState(state => ({
       sortBy,
@@ -71,10 +101,4 @@ export default class App extends React.Component {
       page: 1,
     }));
   }
-}
-
-const SortArrow = ({ reverse }) => {
-  return (
-    reverse ? ' ^' : ' v'
-  )
 }
