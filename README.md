@@ -6,6 +6,7 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 
 ## ideas / todos
 - <s>embedded playback</s>
+- add more channels
 - filters / sorting
 - pagination
 - secure/pub-sub

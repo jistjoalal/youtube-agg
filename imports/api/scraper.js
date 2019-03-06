@@ -15,7 +15,6 @@ export default scrapeIfEmpty = _ => {
 const scrapeChannel = ({ id, title })=> {
   console.log(`scraping ${title}...`)
 
-  // request
   const reqUrl = `https://www.youtube.com/channel/${id}/videos`;
   axios(reqUrl)
     .then(res => {
@@ -41,25 +40,46 @@ const parseVid = (vidHtml, channelId, channelTitle) => {
   const postedAgo = parseChildText('.yt-lockup-meta-info > li', 1);
   const postedTime = tr.parse(postedAgo).getTime();
 
-  // strip video id
+  // strip video id + make url
   const href = parseAttr('.spf-link > .yt-uix-sessionlink', 'href');
   const videoId = href.split('=')[1];
+  const url = 'https://youtube.com' + href;
+
+  // parse viewCount as int
+  const viewCount = parseChildText('.yt-lockup-meta-info > li', 0); 
+  const viewInt = +viewCount.replace(/,/g, '').split(' ')[0];
+
+  // parse duration as seconds
+  const duration = parseAttr('.video-time > span', 'aria-label'); 
+  const durInSec = parseDuration(duration);
 
   return {
-    channelId, channelTitle, videoId,
+    channelId, channelTitle,
 
     postedAgo, postedTime,
+    
+    viewCount, viewInt,
 
-    url : 'https://youtube.com' + href,
+    url, videoId,
+
+    duration, durInSec,
 
     img : parseAttr('.yt-thumb-clip > img', 'src'),
 
     title : parseAttr('.yt-lockup-title > a', 'title'),
-
-    duration : parseAttr('.video-time > span', 'aria-label'),
-    
-    viewCount : parseChildText('.yt-lockup-meta-info > li', 0),
   }; 
+}
+
+const parseDuration = duration => {
+  const sec = parseTimeUnit(duration, 'sec');
+  const min = parseTimeUnit(duration, 'min');
+  const hr = parseTimeUnit(duration, 'hou');
+  return sec + 60 * min + 3600 * hr;
+}
+
+const parseTimeUnit = (t, u) => {
+  const parse = t.match(new RegExp(`\\d+\\s${u}`));
+  return parse ? +parse[0].split(' ')[0] : 0;
 }
 
 const vidHits = html => {
