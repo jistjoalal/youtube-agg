@@ -1,6 +1,7 @@
 import React from 'react';
 
 import VideoList from './VideoList';
+import TitleBar from './TitleBar';
 
 const COL_TEXT = {
   'viewInt': 'Views',
@@ -20,13 +21,13 @@ export default class App extends React.Component {
     const { sortBy, reverse } = this.state;
     return (
       <div className="bg-light">
-        <h1>IDW</h1>
-
-        <div className="container">
-          { this.renderSortButton('viewInt') }
-          { this.renderSortButton('postedTime') }
-          { this.renderSortButton('durInSec') }
-        </div>
+        <TitleBar title="IDW">
+          <div className="d-flex justify-content-center">
+            { this.renderSortButton('viewInt') }
+            { this.renderSortButton('postedTime') }
+            { this.renderSortButton('durInSec') }
+          </div>
+        </TitleBar>
 
         <VideoList sortBy={sortBy} reverse={reverse} />
       </div>
@@ -36,7 +37,7 @@ export default class App extends React.Component {
     const { reverse, sortBy } = this.state;
     const selected = sortBy == col;
     return (
-      <button className="btn btn-outline-dark"
+      <button className="btn btn-dark m-1"
         onClick={this.changeSort(col)}>
         {COL_TEXT[col]}
         {selected && <SortArrow reverse={reverse} />}
