@@ -41,10 +41,16 @@ const parseVid = (vidHtml, channelId, channelTitle) => {
   const postedAgo = parseChildText('.yt-lockup-meta-info > li', 1);
   const postedTime = tr.parse(postedAgo).getTime();
 
-  return {
-    channelId, channelTitle,
+  // strip video id
+  const href = parseAttr('.spf-link > .yt-uix-sessionlink', 'href');
+  const videoId = href.split('=')[1];
 
-    url : 'https://youtube.com' + parseAttr('.spf-link > .yt-uix-sessionlink', 'href'),
+  return {
+    channelId, channelTitle, videoId,
+
+    postedAgo, postedTime,
+
+    url : 'https://youtube.com' + href,
 
     img : parseAttr('.yt-thumb-clip > img', 'src'),
 
@@ -53,8 +59,6 @@ const parseVid = (vidHtml, channelId, channelTitle) => {
     duration : parseAttr('.video-time > span', 'aria-label'),
     
     viewCount : parseChildText('.yt-lockup-meta-info > li', 0),
-
-    postedAgo, postedTime,
   }; 
 }
 

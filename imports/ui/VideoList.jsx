@@ -3,6 +3,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 import Videos from '/imports/api/videos';
 
+import Video from './Video';
+
 class VideoList extends React.Component {
   render() {
     return (
@@ -13,23 +15,7 @@ class VideoList extends React.Component {
   }
   renderVideos() {
     return this.props.videos.map(video =>
-      <a href={video.url} key={video._id}>
-        <div className="row border-bottom p-2 text-light">
-
-          <div className="col-4">
-            <img src={video.img} />
-          </div>
-          
-          <div className="col-8 d-flex flex-column justify-content-center">
-            <h4>{video.title}</h4>
-            <h5 className="text-muted">{video.channelTitle}</h5>
-            <span className="text-muted">
-              {video.duration} - {video.viewCount} - {video.postedAgo}
-            </span>
-          </div> 
-
-        </div>   
-      </a>
+      <Video key={video._id} video={video} /> 
     )
   }
 }

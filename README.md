@@ -5,7 +5,7 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 [IDW](https://en.wikipedia.org/wiki/Eric_Weinstein#Intellectual_dark_web)
 
 ## ideas / todos
-- embedded playback
+- <s>embedded playback</s>
 - filters / sorting
 - pagination
 - secure/pub-sub

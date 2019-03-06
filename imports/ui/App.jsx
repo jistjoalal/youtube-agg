@@ -7,7 +7,6 @@ export default class App extends React.Component {
     return (
       <div className="bg-light">
         <h1>IDW</h1>
-
         <VideoList />
       </div>
     )
