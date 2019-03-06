@@ -6,9 +6,10 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 
 ## ideas / todos
 - <s>embedded playback</s>
+- <s>sorting</s>
+- <s>pagination</s>
+- filters
 - add more channels
-- filters / sorting
-- pagination
 - secure/pub-sub
 - style w/ bootstrap
 - deploy to heroku

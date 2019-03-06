@@ -15,23 +15,43 @@ export default class App extends React.Component {
     this.state = {
       sortBy: 'postedTime',
       reverse: false,
+      page: 1,
     };
   }
   render() {
-    const { sortBy, reverse } = this.state;
+    const { sortBy, reverse, page } = this.state;
     return (
-      <div className="bg-light">
+      <div className="bg-light d-flex flex-column justify-content-center">
         <TitleBar title="IDW">
           <div className="d-flex justify-content-center">
-            { this.renderSortButton('viewInt') }
             { this.renderSortButton('postedTime') }
+            { this.renderSortButton('viewInt') }
             { this.renderSortButton('durInSec') }
           </div>
         </TitleBar>
 
-        <VideoList sortBy={sortBy} reverse={reverse} />
+        <VideoList sortBy={sortBy} reverse={reverse} page={page} />
+
+        { this.renderPageControls() }
       </div>
     )
+  }
+  renderPageControls() {
+    return (
+      <div className="d-flex justify-content-around m-1">
+        <a className="btn btn-secondary" href="#">
+          Top
+        </a>
+        <button className="btn btn-secondary" onClick={this.nextPage}>
+          More
+        </button>
+      </div>
+    )
+  }
+  nextPage = _ => {
+    this.setState(state => ({
+      page: state.page + 1,
+    }));
   }
   renderSortButton = col => {
     const { reverse, sortBy } = this.state;
@@ -48,6 +68,7 @@ export default class App extends React.Component {
     this.setState(state => ({
       sortBy,
       reverse: state.sortBy == sortBy && !state.reverse,
+      page: 1,
     }));
   }
 }

@@ -20,10 +20,18 @@ class VideoList extends React.Component {
   }
 }
 
-const VideoListTracker = withTracker(({ query = {}, sortBy = 'postedTime', reverse = false }) => {
+const VideoListTracker = withTracker((
+  { query = {}, sortBy = 'postedTime', reverse = false, page = 1 }
+) => {
   const dir = reverse ? 1 : -1;
   return {
-    videos: Videos.find(query, { sort: { [sortBy]: dir }}).fetch(),
+    videos: Videos.find(
+      query,
+      {
+        sort: { [sortBy]: dir },
+        limit: page * 10,
+      },
+    ).fetch(),
   }
 })(VideoList);
 
