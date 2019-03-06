@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default TitleBar = ({ children }) => {
+export default TitleBar = ({ children, title }) => {
+  const isChannel = title !== "IDW";
   return (
     <nav className="TitleBar navbar bg-secondary text-dark border-bottom">
-      <Link to="/" className="btn">
-        <h1 className="serif font-weight-light">IDW</h1>
-      </Link>
+      {isChannel &&
+        <Link to="/" className="btn btn-dark">
+          Home
+        </Link>
+      }
+      <h1 className="serif font-weight-light">{title}</h1>
       {children}
     </nav>
   );

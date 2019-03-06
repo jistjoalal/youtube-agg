@@ -30,14 +30,11 @@ export default class App extends React.Component {
   render() {
     const { sortBy, reverse, page } = this.state;
     const query = this.props.query || {};
+    const title = this.props.title || "IDW";
     return (
-      <div className="bg-light d-flex flex-column justify-content-center">
-        <TitleBar title="IDW">
-          <div className="d-flex justify-content-center">
-            { this.renderSortButton('postedTime') }
-            { this.renderSortButton('viewInt') }
-            { this.renderSortButton('durInSec') }
-          </div>
+      <div className="d-flex flex-column justify-content-center">
+        <TitleBar title={title}>
+          { this.renderSortButtons() }
         </TitleBar>
 
         <VideoList query={query} sortBy={sortBy} reverse={reverse} page={page} />
@@ -46,17 +43,26 @@ export default class App extends React.Component {
       </div>
     )
   }
+  renderSortButtons() {
+    return (
+      <div className="d-flex justify-content-center">
+        { this.renderSortButton('postedTime') }
+        { this.renderSortButton('viewInt') }
+        { this.renderSortButton('durInSec') }
+      </div>
+    );
+  }
   renderPageControls() {
     const { autoScroll } = this.state;
     return (
       <div className="d-flex justify-content-around m-1 fixed-bottom">
-        <a className="btn btn-secondary" href="#">
+        <a className="btn btn-secondary shadow" href="#">
           Top
         </a>
-        <button className="btn btn-secondary" onClick={this.nextPage}>
+        <button className="btn btn-secondary shadow" onClick={this.nextPage}>
           More
         </button>
-        <button className="btn btn-secondary">
+        <button className="btn btn-secondary shadow">
           <label className="m-0">
             <input type="checkbox" checked={autoScroll} onChange={this.toggleAutoScroll}/>
             &nbsp;Scroll ∞ 
