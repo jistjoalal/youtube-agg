@@ -18,5 +18,4 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - refactor
 
 ## bugs
-- sorting gets whacked when clickign sort buttons after implementing pub/sub
 - scroll checkbox not working in firefox

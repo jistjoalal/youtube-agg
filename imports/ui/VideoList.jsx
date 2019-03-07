@@ -28,7 +28,7 @@ const VideoListTracker = withTracker((
 ) => {
   const dir = reverse ? 1 : -1;
   const videosHandle = Meteor.subscribe('videos', query, sortBy, dir, page);
-  const videos = Videos.find().fetch();
+  const videos = Videos.find({}, { sort: { [sortBy]: dir }}).fetch();
   const loading = !videosHandle.ready();
   return {
     videos,
