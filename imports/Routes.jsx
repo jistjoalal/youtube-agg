@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import App from './ui/pages/App';
+import Home from './ui/pages/Home';
 import Channel from './ui/pages/Channel';
 
 export default Routes = _ =>
   <Router>
     <Switch>
-      <Route path="/" exact component={App} />
+      <Route path="/" exact component={Home} />
       <Route path="/channel/:id" component={Channel} />
-      <Route component={App} />
+      <Route component={Home} />
     </Switch>
   </Router>
