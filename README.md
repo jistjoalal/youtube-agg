@@ -16,6 +16,3 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - polling system to request channels be added
 - research annoying youtube API
 - refactor
-
-## bugs
-- scroll checkbox not working in firefox

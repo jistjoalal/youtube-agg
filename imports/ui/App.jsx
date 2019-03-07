@@ -62,11 +62,10 @@ export default class App extends React.Component {
         <button className="btn btn-secondary shadow" onClick={this.nextPage}>
           More
         </button>
-        <button className="btn btn-secondary shadow">
-          <label className="m-0">
-            <input type="checkbox" checked={autoScroll} onChange={this.toggleAutoScroll}/>
-            &nbsp;Scroll ∞ 
-          </label>
+        <button className={`btn btn-secondary shadow ${autoScroll ? 'active' : ''}`}
+          onClick={this.toggleAutoScroll}
+        >
+          {autoScroll ? <u>Scroll ∞</u> : 'Scroll ∞'}
         </button>
       </div>
     )
