@@ -1,7 +1,7 @@
 import React from 'react';
 
-import VideoList from './VideoList';
-import TitleBar from './TitleBar';
+import VideoList from '../components/VideoList';
+import TitleBar from '../components/TitleBar';
 
 const COL_TEXT = {
   'viewInt': 'Views',

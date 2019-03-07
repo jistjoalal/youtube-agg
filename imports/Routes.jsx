@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import App from './ui/App';
-import Channel from './ui/Channel';
+import App from './ui/pages/App';
+import Channel from './ui/pages/Channel';
 
 export default Routes = _ =>
   <Router>

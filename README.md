@@ -11,8 +11,8 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - <s>auto scroll on bottom of page setting</s>
 - <s>filtering</s>
 - <s>secure/pub-sub</s>
+- refactor
 - style w/ bootstrap
 - deploy to heroku
-- polling system to request channels be added
-- research annoying youtube API
-- refactor
+- some way of adding more channels dynamicaly?
+- a way to request/vote on channel to be added?
