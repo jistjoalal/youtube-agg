@@ -12,7 +12,7 @@ that grabs the most recent videos every hour using
 [SyncedCron](https://github.com/percolatestudio/meteor-synced-cron).
 
 - [server/main.js](https://github.com/jistjoalal/youtube-agg/blob/master/server/main.js)
-  - [imports/api/videos](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/videos)
+  - [imports/api/videos](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/videos.js)
   - [imports/api/scraper](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/scraper)
 
 The scraped video data (url, thumbnail, etc.) is saved to
