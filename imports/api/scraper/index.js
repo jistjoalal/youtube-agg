@@ -1,3 +1,3 @@
-import updateVideos from './scraper';
+import scrape from './scraper';
 
-export default updateVideos;
+export default scrape;
