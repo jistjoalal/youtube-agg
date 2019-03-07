@@ -11,19 +11,19 @@ Youtube API looks daunting so I built an old-fashioned scraper/parser using
 that grabs the most recent videos every hour using
 [SyncedCron](https://github.com/percolatestudio/meteor-synced-cron).
 
-- [server/main.js]()
-  - [imports/api/videos]()
-  - [imports/api/scraper]()
+- [server/main.js](https://github.com/jistjoalal/youtube-agg/blob/master/server/main.js)
+  - [imports/api/videos](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/videos)
+  - [imports/api/scraper](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/scraper)
 
 The scraped video data (url, thumbnail, etc.) is saved to
 [Meteor/Mongo](https://docs.meteor.com/#/full/)
 and rendered to the client using
 [React](https://reactjs.org/).
 
-- [client/main.jsx]()
-  - [imports/Routes.jsx]()
-    - [imports/ui/pages/Home.jsx]()
-    - [imports/ui/pages/Channel.jsx]()
+- [client/main.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/client/main.jsx)
+  - [imports/Routes.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/Routes.jsx)
+    - [imports/ui/pages/Home.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/Home.jsx)
+    - [imports/ui/pages/Channel.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/Channel.jsx)
 
 ## ideas / todos
 - <s>embedded playback</s>
