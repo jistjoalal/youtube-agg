@@ -1,9 +1,9 @@
 import React from 'react';
 
 const COL_TEXT = {
-  'viewInt': 'Views',
+  'viewCount': 'Views',
   'postedTime': 'Upload Date',
-  'durInSec': 'Duration',
+  'duration': 'Duration',
 };
 
 const SortArrow = ({ reverse }) =>
