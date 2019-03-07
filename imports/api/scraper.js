@@ -5,23 +5,17 @@ import tr from 'timeago-reverse';
 import Videos from './videos';
 import { CHANNEL_IDS } from './channels';
 
-export default scrapeIfEmpty = _ => {
-  if (!Videos.find().fetch().length) {
-    CHANNEL_IDS.forEach(scrapeChannel);
-  }
+export default updateVideos = _ => {
+  CHANNEL_IDS.forEach(scrapeChannel);
 }
 
-
 const scrapeChannel = ({ id, title })=> {
-  console.log(`scraping ${title}...`)
-
   const reqUrl = `https://www.youtube.com/channel/${id}/videos`;
   axios(reqUrl)
     .then(res => {
       // parse and insert hits into db
       const t = vidHits(res.data).map(v => parseVid(v, id, title));
-      t.forEach(insertIfNew);
-      console.log(`found ${t.length} ${title} videos`);
+      t.forEach(insertVideo);
     })
     .catch(err => console.log(err))
 }
@@ -86,8 +80,11 @@ const vidHits = html => {
   return $('.yt-lockup-video', html).map((_, e) => $(e).html()).toArray();
 }
 
-const insertIfNew = vid => {
-  if (vid && !Videos.findOne(vid)) {
-    Videos.insert(vid);
+const insertVideo = vid => {
+  if (!vid) return;
+  const q = { _id: vid._id };
+  if (Videos.findOne(q)) {
+    return Videos.update(q, vid);
   }
+  return Videos.insert(vid);
 }
