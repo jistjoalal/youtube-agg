@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import VideoList from './VideoList';
 import TitleBar from './TitleBar';
+import VideoList from './VideoList';
 import SortButtons from './SortButtons';
 import PageControls from './PageControls';
 
@@ -28,7 +29,15 @@ export default class App extends React.Component {
       <div className="d-flex flex-column justify-content-center">
 
         <TitleBar title={title}>
+
+          {title !== "IDW" &&
+            <Link to="/" className="btn btn-dark m-1">
+              Home
+            </Link>
+          }
+
           <SortButtons sortBy={sortBy} reverse={reverse} change={this.changeSort} />
+            
         </TitleBar>
 
         <VideoList query={query} sortBy={sortBy} reverse={reverse} page={page} />

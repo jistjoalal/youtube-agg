@@ -34,6 +34,8 @@ and rendered to the client using
 - <s>secure/pub-sub</s>
 - <s>schedule scraping</s>
 - <s>deploy to heroku</s>
+- add an icon library
+- google fonts for the title
 - tests
 - style w/ bootstrap
 - some way of adding more channels dynamicaly?
