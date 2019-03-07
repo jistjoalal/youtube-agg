@@ -11,7 +11,7 @@ Youtube subscriptions suck. Let's make a youtube scraper/aggregate for IDW-relat
 - <s>auto scroll on bottom of page setting</s>
 - <s>filtering</s>
 - <s>secure/pub-sub</s>
-- schedule scraping
+- <s>schedule scraping</s>
 - tests
 - style w/ bootstrap
 - deploy to heroku
