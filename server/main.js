@@ -6,7 +6,7 @@ import Videos from '../imports/api/videos';
 Meteor.startup(_ => {
   if (Meteor.isDevelopment) {
     // Videos.remove({});
-    scrape();
+    // scrape();
   }
 
   if (Meteor.isProduction) {

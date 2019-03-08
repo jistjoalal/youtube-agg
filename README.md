@@ -34,7 +34,7 @@ and rendered to the client using
 - <s>secure/pub-sub</s>
 - <s>schedule scraping</s>
 - <s>deploy to heroku</s>
-- channel list page
+- <s>channel list page</s>
 - add an icon library
 - google fonts for the title
 - tests

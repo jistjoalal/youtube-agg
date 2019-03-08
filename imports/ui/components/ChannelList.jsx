@@ -8,9 +8,9 @@ export default ChannelList = ({ channels }) =>
 
     <TitleBar title="IDW Channels"></TitleBar>
 
-    <div className="container">
-      {channels.map(props =>
-        <ChannelLink key={props.id} {...props} />
+    <div className="container bg-dark">
+      {channels.map(channel =>
+        <ChannelLink key={channel._id} {...channel} />
       )}
     </div>
     

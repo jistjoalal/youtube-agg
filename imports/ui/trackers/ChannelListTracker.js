@@ -1,9 +1,11 @@
 import { withTracker } from 'meteor/react-meteor-data';
 
-import { CHANNEL_IDS } from '../../api/scraper/channels';
+import Channels from '../../api/channels';
 
 export default ChannelListTracker = withTracker(_ => {
+  Meteor.subscribe('channels');
+  const channels = Channels.find().fetch();
   return {
-    channels: CHANNEL_IDS,
+    channels,
   };
 })
