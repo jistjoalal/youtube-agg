@@ -5,7 +5,7 @@ import Videos from '../../api/videos';
 export default ChannelTracker = withTracker(({ match }) => {
   const query = { channelId: match.params.id };
   const aVideo = Videos.findOne(query);
-  const title = aVideo ? aVideo.channelTitle : "Channel Not Found";
+  const title = aVideo ? aVideo.channelTitle : " ";
   return {
     query,
     title,
