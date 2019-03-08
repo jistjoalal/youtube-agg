@@ -30,12 +30,6 @@ export default class App extends React.Component {
 
         <TitleBar title={title}>
 
-          {title !== "IDW" &&
-            <Link to="/" className="btn btn-dark m-1">
-              Home
-            </Link>
-          }
-
           <SortButtons sortBy={sortBy} reverse={reverse} change={this.changeSort} />
             
         </TitleBar>

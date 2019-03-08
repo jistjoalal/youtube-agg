@@ -34,12 +34,14 @@ and rendered to the client using
 - <s>secure/pub-sub</s>
 - <s>schedule scraping</s>
 - <s>deploy to heroku</s>
+- channel list page
 - add an icon library
 - google fonts for the title
 - tests
 - style w/ bootstrap
 - some way of adding more channels dynamicaly?
 - a way to request/vote on channel to be added?
+- notifications for new videos?
 
 ## local
 ```sh
