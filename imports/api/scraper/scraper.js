@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import Videos from '../videos';
+import Channels from '../channels';
 import { parseVideos, parseChannel } from './parser';
 import { CHANNEL_IDS } from './channels';
 
@@ -13,7 +14,7 @@ const scrapeChannel = ({ id, title }) => {
   axios(reqUrl)
     .then(({ data }) => {
 
-      // parseChannel(data, id, title)//.forEach(updateChannel);
+      updateChannel(parseChannel(data, id, title));
 
       parseVideos(data, id, title).forEach(updateVideo);
       
@@ -21,6 +22,13 @@ const scrapeChannel = ({ id, title }) => {
     .catch(err => console.log(err))
 }
 
+const updateChannel = channel => {
+  const q = { _id: channel._id };
+  if (Channels.findOne(q)) {
+    return Channels.update(q, channel);
+  }
+  return Channels.insert(channel);
+}
 
 const updateVideo = vid => {
   if (!vid) return;

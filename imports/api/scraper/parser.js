@@ -2,7 +2,17 @@ import tr from 'timeago-reverse';
 import $ from 'cheerio';
 
 export const parseChannel = (data, channelId, title) => {
-  console.log(data);
+  const avatar = parseAvatar(data);
+  return {
+    _id: channelId,
+    title,
+    avatar,
+  };
+}
+
+const parseAvatar = html => {
+  const src = parseAttr(html, '.appbar-nav-avatar', 'src');
+  return src;
 }
 
 // returns array of parsed (object) videos
