@@ -1,5 +1,5 @@
 import ChannelTracker from '../trackers/ChannelTracker';
 
-import App from '../components/App';
+import Channel from '../components/Channel';
 
-export default ChannelTracker(App);
+export default ChannelTracker(Channel);

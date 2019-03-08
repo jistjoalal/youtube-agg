@@ -1,13 +1,14 @@
 import { withTracker } from 'meteor/react-meteor-data';
 
-import Videos from '../../api/videos';
+import Channels from '../../api/channels';
 
 export default ChannelTracker = withTracker(({ match }) => {
-  const query = { channelId: match.params.id };
-  const aVideo = Videos.findOne(query);
-  const title = aVideo ? aVideo.channelTitle : " ";
+  const { id } = match.params;
+  const channelsHandle = Meteor.subscribe('channels');
+  const loading = !channelsHandle.ready();
+  const channel = Channels.findOne({ _id: id });
   return {
-    query,
-    title,
+    loading,
+    channel,
   };
 });
