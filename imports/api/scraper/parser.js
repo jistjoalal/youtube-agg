@@ -1,10 +1,14 @@
 import tr from 'timeago-reverse';
 import $ from 'cheerio';
 
+export const parseChannel = (data, channelId, title) => {
+  console.log(data);
+}
+
 // returns array of parsed (object) videos
 // channelId + title are the same for all videos found in response
 // so are just passed thru
-export default parseResponse = (data, channelId, title) =>
+export const parseVideos = (data, channelId, title) =>
   vidHits(data).map(v => parseVid(v, channelId, title));
 
 // returns array of parsable HTML objects
@@ -16,7 +20,7 @@ const vidHits = html => {
 
 // returns video object w/ data parsed from HTML
 const parseVid = (vidHtml, channelId, channelTitle) => {
-  if (isLive(vidHtml)) return null;
+  if (isNotVideo(vidHtml)) return null;
   return {
     channelId, channelTitle,
     ...parseIdUrl(vidHtml),
@@ -27,9 +31,13 @@ const parseVid = (vidHtml, channelId, channelTitle) => {
   }; 
 }
 
-// Filter out Live Streams - don't have duration
-const isLive = html => {
-  return !$('.video-time > span', html).length;
+// Filter out:
+//  - Live Streams - don't have duration
+//  - Reminders - have unique element
+const isNotVideo = html => {
+  const timeSpan = $('.video-time > span', html);
+  const reminder = $('.yt-uix-livereminder', html);
+  return !timeSpan.length || reminder.length;
 }
 
 // ez parse
@@ -79,5 +87,8 @@ const parseAttr = (html, target, attr) => {
 }
 
 const parseChildText = (html, target, childIdx) => {
+  if (!$(target, html)[childIdx]) {
+    console.log(html);
+  }
   return $(target, html)[childIdx].children[0].data;
 }
