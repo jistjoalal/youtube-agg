@@ -1,10 +1,15 @@
 import tr from 'timeago-reverse';
 import $ from 'cheerio';
 
+/**
+ * High-level
+ * - object parsing
+ */
+
 // returns channel object
-export const parseChannel = (response, _id) => {
-  const avatar = parseAvatar(response);
-  const title = parseChannelTitle(response);
+export const parseChannel = (html, _id) => {
+  const title = parseAttr(html, '.appbar-nav-avatar', 'title');
+  const avatar = parseAttr(html, '.appbar-nav-avatar', 'src');
   return {
     _id,
     title,
@@ -15,32 +20,37 @@ export const parseChannel = (response, _id) => {
 // returns array of parsed (object) videos
 // channel data is the same for all videos found in response
 // so it is passed thru
-export const parseVideos = (response, channel) =>
-  vidHits(response).map(v => parseVid(v, channel));
+export const parseVideos = (html, channel) =>
+  vidHits(html).map(v => parseVid(v, channel));
 
 // returns array of parsable HTML objects
-const vidHits = html => {
+export const vidHits = html => {
   return $('.yt-lockup-video', html)
     .map((_, e) => $(e).html())
     .toArray();
 }
 
 // returns video object w/ data parsed from HTML
-const parseVid = (vidHtml, channel) => {
+export const parseVid = (html, channel) => {
 
   // ignore non-videos
-  if (isNotVideo(vidHtml)) return null;
+  if (isNotVideo(html)) return null;
 
   return {
     channelId: channel._id,
     channelTitle: channel.title,
-    ...parseIdUrl(vidHtml),
-    ...parseBasic(vidHtml),
-    viewCount : parseViewCount(vidHtml),
-    duration : parseDuration(vidHtml),
-    postedTime : parsePostedTime(vidHtml),
+    ...parseIdUrl(html),
+    ...parseBasic(html),
+    viewCount : parseViewCount(html),
+    duration : parseDuration(html),
+    postedTime : parsePostedTime(html),
   }; 
 }
+
+/**
+ * Mid-level
+ * - data parsing
+ */
 
 // Filter out:
 //  - Live Streams - don't have duration
@@ -87,29 +97,22 @@ const parseDuration = html => {
   return sec + 60 * min + 3600 * hr;
 }
 
+/**
+ * Low-level
+ * - html parsing
+ */
+
 // returns int part of time string (s) matching unit (u)
-const parseTimeUnit = (s, u) => {
+export const parseTimeUnit = (s, u) => {
   const parse = s.match(new RegExp(`\\d+\\s${u}`));
   return parse ? +parse[0].split(' ')[0] : 0;
 }
 
-// returns avatar url
-const parseAvatar = html => {
-  const src = parseAttr(html, '.appbar-nav-avatar', 'src');
-  return src;
-}
-
-// returns channel name (e.g. Rebel Wisdom)
-const parseChannelTitle = html => {
-  const title = parseAttr(html, '.appbar-nav-avatar', 'title');
-  return title;
-}
-
-const parseAttr = (html, target, attr) => {
+export const parseAttr = (html, target, attr) => {
   return $(target, html)[0].attribs[attr];
 }
 
-const parseChildText = (html, target, childIdx) => {
+export const parseChildText = (html, target, childIdx) => {
   if (!$(target, html)[childIdx]) {
     throw new Meteor.Error(`Can't parse:\n${html}\n^ Couldn't parse`)
   }

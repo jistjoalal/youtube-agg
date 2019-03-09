@@ -3,14 +3,13 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer"
+    "test": "TEST_WATCH=1 meteor test --driver-package cultofcoders:mocha -p 4000"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "chai": "^4.2.0",
     "cheerio": "^1.0.0-rc.2",
     "jquery": "^3.3.1",
     "meteor-node-stubs": "^0.4.1",
@@ -26,8 +25,7 @@
     "mainModule": {
       "client": "client/main.jsx",
       "server": "server/main.js"
-    },
-    "testModule": "tests/main.js"
+    }
   },
   "engines": {
     "node": "8.11.4"
