@@ -36,13 +36,14 @@ and rendered to the client using
 - <s>schedule scraping</s>
 - <s>deploy to heroku</s>
 - <s>channel list page</s>
+- some way of adding more channels dynamicaly?
+  - save the title w/ scraper and I'd call this done.
+- tests
+- about page
 - transitions look glitchy on live site
 - add an icon library
 - google fonts for the title
-- tests
 - style w/ bootstrap
-- some way of adding more channels dynamicaly?
-  - save the title w/ scraper and I'd call this done.
 - a way to request/vote on channel to be added?
 - notifications for new videos?
 

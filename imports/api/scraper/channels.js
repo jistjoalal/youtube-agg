@@ -46,5 +46,9 @@ export const CHANNEL_IDS = [
   {
     title: 'Gad Saad',
     id: 'UCLH7qUqM0PLieCVaHA7RegA',
-  }
+  },
+  {
+    title: 'Bret Weinstein',
+    id: 'UCi5N_uAqApEUIlg32QzkPlg',
+  },
 ];
