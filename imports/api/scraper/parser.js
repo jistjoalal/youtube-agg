@@ -39,8 +39,8 @@ export const parseVid = (html, channel) => {
   return {
     channelId: channel._id,
     channelTitle: channel.title,
-    ...parseIdUrl(html),
     ...parseBasic(html),
+    _id: parseId(html),
     viewCount : parseViewCount(html),
     duration : parseDuration(html),
     postedTime : parsePostedTime(html),
@@ -69,11 +69,10 @@ const parseBasic = html => {
 }
 
 // strip video id + make url
-const parseIdUrl = html => {
+const parseId = html => {
   const href = parseAttr(html, '.spf-link > .yt-uix-sessionlink', 'href');
   const _id = href.split('=')[1];
-  const url = 'https://youtube.com' + href;
-  return { _id, url };
+  return _id;
 }
 
 // parse time ago string as unix

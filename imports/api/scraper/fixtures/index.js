@@ -11,7 +11,6 @@ export const TEST_CHANNEL = {
 
 export const TEST_VIDEO = {
   _id: 'z8oRVYE21_s',
-  url: 'https://youtube.com/watch?v=z8oRVYE21_s',
   viewCount: 1896,
   duration: 192,
 };
