@@ -35,6 +35,7 @@ and rendered to the client using
 - <s>schedule scraping</s>
 - <s>deploy to heroku</s>
 - <s>channel list page</s>
+- transitions look glitchy on live site
 - add an icon library
 - google fonts for the title
 - tests

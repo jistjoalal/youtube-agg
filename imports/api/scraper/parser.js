@@ -1,6 +1,7 @@
 import tr from 'timeago-reverse';
 import $ from 'cheerio';
 
+// returns channel object
 export const parseChannel = (data, channelId, title) => {
   const avatar = parseAvatar(data);
   return {
@@ -8,11 +9,6 @@ export const parseChannel = (data, channelId, title) => {
     title,
     avatar,
   };
-}
-
-const parseAvatar = html => {
-  const src = parseAttr(html, '.appbar-nav-avatar', 'src');
-  return src;
 }
 
 // returns array of parsed (object) videos
@@ -90,6 +86,12 @@ const parseDuration = html => {
 const parseTimeUnit = (s, u) => {
   const parse = s.match(new RegExp(`\\d+\\s${u}`));
   return parse ? +parse[0].split(' ')[0] : 0;
+}
+
+// returns avatar url
+const parseAvatar = html => {
+  const src = parseAttr(html, '.appbar-nav-avatar', 'src');
+  return src;
 }
 
 const parseAttr = (html, target, attr) => {

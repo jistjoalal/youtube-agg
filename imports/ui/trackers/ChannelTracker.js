@@ -4,11 +4,12 @@ import Channels from '../../api/channels';
 
 export default ChannelTracker = withTracker(({ match }) => {
   const { id } = match.params;
-  const channelsHandle = Meteor.subscribe('channels');
-  const loading = !channelsHandle.ready();
+  Meteor.subscribe('channels');
   const channel = Channels.findOne({ _id: id });
+  const query = { channelId: id };
+  const title = channel ? channel.title : "";
   return {
-    loading,
-    channel,
+    query,
+    title,
   };
 });
