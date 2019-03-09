@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import TitleBar from './TitleBar';
+import TitleBar from '../TitleBar';
 import VideoList from './VideoList';
 import SortButtons from './SortButtons';
 import PageControls from './PageControls';

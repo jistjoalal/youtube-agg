@@ -6,15 +6,18 @@ const GH = 'github';
 const TitleLinks = ({ title }) =>
   title == "IDW" ?
     <div>
+
       <Link className="btn btn-secondary" to="/channels">
         All Channels
       </Link>
+
       <a target="blank"
         className="text-monospace btn btn-secondary ml-2"
         href="https://github.com/jistjoalal/youtube-agg"
       >
         { GH }
       </a>
+      
     </div>
   : <div>
       <Link className="btn btn-secondary" to="/">

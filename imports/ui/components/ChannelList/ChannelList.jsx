@@ -1,8 +1,8 @@
 import React from 'react';
 
-import TitleBar from '../components/TitleBar';
-import ChannelLink from '../components/ChannelLink';
-import FlipMoveList from '../components/FlipMoveList';
+import ChannelLink from './ChannelLink';
+import TitleBar from '../TitleBar';
+import FlipMoveList from '../FlipMoveList';
 
 export default ChannelList = ({ channels }) =>
   <div>

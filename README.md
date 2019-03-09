@@ -13,6 +13,7 @@ that grabs the most recent videos every hour using
 
 - [server/main.js](https://github.com/jistjoalal/youtube-agg/blob/master/server/main.js)
   - [imports/api/videos](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/videos.js)
+  - [imports/api/channels](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/channels.js)
   - [imports/api/scraper](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/scraper)
 
 The scraped video data (url, thumbnail, etc.) is saved to
@@ -41,6 +42,7 @@ and rendered to the client using
 - tests
 - style w/ bootstrap
 - some way of adding more channels dynamicaly?
+  - save the title w/ scraper and I'd call this done.
 - a way to request/vote on channel to be added?
 - notifications for new videos?
 

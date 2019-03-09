@@ -1,5 +1,5 @@
 import ChannelTracker from '../trackers/ChannelTracker';
 
-import App from '../components/App';
+import VideoListApp from '../components/VideoListApp';
 
-export default ChannelTracker(App);
+export default ChannelTracker(VideoListApp);

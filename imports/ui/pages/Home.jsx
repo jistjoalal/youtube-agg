@@ -1,5 +1,5 @@
 import HomeTracker from '../trackers/HomeTracker';
 
-import App from '../components/App';
+import VideoListApp from '../components/VideoListApp';
 
-export default HomeTracker(App);
+export default HomeTracker(VideoListApp);

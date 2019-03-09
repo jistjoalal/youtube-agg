@@ -1,9 +1,9 @@
 import React from 'react';
 
-import VideoListTracker from '../trackers/VideoListTracker';
+import VideoListTracker from '../../trackers/VideoListTracker';
 
+import FlipMoveList from '../FlipMoveList';
 import Video from './Video';
-import FlipMoveList from './FlipMoveList';
 
 const VideoList = ({ loading, videos }) =>
   <div className="container bg-dark shadow">
