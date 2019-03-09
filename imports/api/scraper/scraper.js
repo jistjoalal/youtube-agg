@@ -3,20 +3,21 @@ import axios from 'axios';
 import Videos from '../videos';
 import Channels from '../channels';
 import { parseVideos, parseChannel } from './parser';
-import { CHANNEL_IDS } from './channels';
+import CHANNEL_IDS from './channelIds';
 
 export default scrape = _ => {
   CHANNEL_IDS.forEach(scrapeChannel);
 }
 
-const scrapeChannel = ({ id, title }) => {
-  const reqUrl = `https://www.youtube.com/channel/${id}/videos`;
+const scrapeChannel = _id => {
+  const reqUrl = `https://www.youtube.com/channel/${_id}/videos`;
   axios(reqUrl)
     .then(({ data }) => {
 
-      updateChannel(parseChannel(data, id, title));
+      const channel = parseChannel(data, _id);
+      updateChannel(channel);
 
-      parseVideos(data, id, title).forEach(updateVideo);
+      parseVideos(data, channel).forEach(updateVideo);
       
     })
     .catch(err => console.log(err))

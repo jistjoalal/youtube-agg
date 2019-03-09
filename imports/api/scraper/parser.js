@@ -2,20 +2,21 @@ import tr from 'timeago-reverse';
 import $ from 'cheerio';
 
 // returns channel object
-export const parseChannel = (data, channelId, title) => {
-  const avatar = parseAvatar(data);
+export const parseChannel = (response, _id) => {
+  const avatar = parseAvatar(response);
+  const title = parseChannelTitle(response);
   return {
-    _id: channelId,
+    _id,
     title,
     avatar,
   };
 }
 
 // returns array of parsed (object) videos
-// channelId + title are the same for all videos found in response
-// so are just passed thru
-export const parseVideos = (data, channelId, title) =>
-  vidHits(data).map(v => parseVid(v, channelId, title));
+// channel data is the same for all videos found in response
+// so it is passed thru
+export const parseVideos = (response, channel) =>
+  vidHits(response).map(v => parseVid(v, channel));
 
 // returns array of parsable HTML objects
 const vidHits = html => {
@@ -25,10 +26,14 @@ const vidHits = html => {
 }
 
 // returns video object w/ data parsed from HTML
-const parseVid = (vidHtml, channelId, channelTitle) => {
+const parseVid = (vidHtml, channel) => {
+
+  // ignore non-videos
   if (isNotVideo(vidHtml)) return null;
+
   return {
-    channelId, channelTitle,
+    channelId: channel._id,
+    channelTitle: channel.title,
     ...parseIdUrl(vidHtml),
     ...parseBasic(vidHtml),
     viewCount : parseViewCount(vidHtml),
@@ -94,13 +99,19 @@ const parseAvatar = html => {
   return src;
 }
 
+// returns channel name (e.g. Rebel Wisdom)
+const parseChannelTitle = html => {
+  const title = parseAttr(html, '.appbar-nav-avatar', 'title');
+  return title;
+}
+
 const parseAttr = (html, target, attr) => {
   return $(target, html)[0].attribs[attr];
 }
 
 const parseChildText = (html, target, childIdx) => {
   if (!$(target, html)[childIdx]) {
-    console.log(html);
+    throw new Meteor.Error(`Can't parse:\n${html}\n^ Couldn't parse`)
   }
   return $(target, html)[childIdx].children[0].data;
 }

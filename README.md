@@ -36,16 +36,25 @@ and rendered to the client using
 - <s>schedule scraping</s>
 - <s>deploy to heroku</s>
 - <s>channel list page</s>
-- some way of adding more channels dynamicaly?
-  - save the title w/ scraper and I'd call this done.
+- <s>way of adding more channels easily</s>
+
 - tests
 - about page
 - transitions look glitchy on live site
+- research how blocking scraper is / how it affects UX while running
+- redirect to err page when offline
+
 - add an icon library
 - google fonts for the title
-- style w/ bootstrap
+- pro styles
+
+- more channel data
+  - (url, banner, subs, ttl views, post freq.)
+  - sort channels
 - a way to request/vote on channel to be added?
 - notifications for new videos?
+- a way of tagging videos w/ keywords?
+- search bar?
 
 ## local
 ```sh
