@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+const should = require('chai').should();
 
 import { scrapeChannel } from './scraper';
 
@@ -18,12 +18,12 @@ if (Meteor.isServer) {
 
       it('scrapes channel', function() {
         const channel = Channels.findOne(_id);
-        expect(channel).to.deep.equal(TEST_CHANNEL);
+        channel.should.deep.equal(TEST_CHANNEL);
       });
 
       it('scrapes videos', function() {
         const videos = Videos.find().fetch();
-        expect(videos).to.not.be.empty;
+        videos.should.not.be.empty;
       });
     });
   });
