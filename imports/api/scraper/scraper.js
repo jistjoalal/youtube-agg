@@ -14,7 +14,7 @@ const scrapeChannel = _id => {
   axios(reqUrl)
     .then(({ data }) => {
 
-      const channel = parseChannel(data, _id);
+      const channel = parseChannel(data);
       updateChannel(channel);
 
       parseVideos(data, channel).forEach(updateVideo);

@@ -7,7 +7,8 @@ import $ from 'cheerio';
  */
 
 // returns channel object
-export const parseChannel = (html, _id) => {
+export const parseChannel = html => {
+  const _id = parseAttr(html, '.yt-uix-subscription-button', 'data-channel-external-id');
   const title = parseAttr(html, '.appbar-nav-avatar', 'title');
   const avatar = parseAttr(html, '.appbar-nav-avatar', 'src');
   return {

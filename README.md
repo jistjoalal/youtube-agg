@@ -38,7 +38,6 @@ and rendered to the client using
 - <s>channel list page</s>
 - <s>way of adding more channels easily</s>
 
-- parse channel doesn't need id as param
 - tests
 - about page
 - transitions look glitchy on live site

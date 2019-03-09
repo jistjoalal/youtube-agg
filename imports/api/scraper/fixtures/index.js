@@ -4,7 +4,7 @@
  */
 
 export const TEST_CHANNEL = {
-  _id: 'TEST_CHANNEL',
+  _id: 'UCTjxmzChimJa3X_rAgLAnxg',
   title: 'Lindsay Shepherd',
   avatar: 'https://yt3.ggpht.com/a-/AAuE7mCobZ6BKaqzgNGApOUpXGMfJUEZ5QJ2sa6j3A=s100-mo-c-c0xffffffff-rj-k-no',
 };

@@ -45,7 +45,7 @@ if (Meteor.isServer) {
     describe('parseChannel', function() {
       
       const html = loadHtmlFile('videosPage');
-      const actual = parseChannel(html, TEST_CHANNEL._id);
+      const actual = parseChannel(html);
 
       assertProperties(actual, TEST_CHANNEL);
     });
