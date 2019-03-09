@@ -9,7 +9,7 @@ export default scrape = _ => {
   CHANNEL_IDS.forEach(scrapeChannel);
 }
 
-const scrapeChannel = _id => {
+export const scrapeChannel = _id => {
   const reqUrl = `https://www.youtube.com/channel/${_id}/videos`;
   axios(reqUrl)
     .then(({ data }) => {

@@ -38,6 +38,7 @@ and rendered to the client using
 - <s>channel list page</s>
 - <s>way of adding more channels easily</s>
 
+- remove redundancies in parser tests
 - tests
 - about page
 - transitions look glitchy on live site

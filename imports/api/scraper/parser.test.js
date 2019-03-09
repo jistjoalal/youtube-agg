@@ -33,7 +33,6 @@ const assertProperties = (actual, expected) => {
   });
 }
 
-
 /**
  * Tests
  */
