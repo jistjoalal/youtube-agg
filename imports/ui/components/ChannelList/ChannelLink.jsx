@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Must be class Component to work w/ FlipMove
 export default class ChannelLink extends React.Component {
   render() {
     const { _id, title, avatar } = this.props;
