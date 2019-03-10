@@ -39,6 +39,8 @@ and rendered to the client using
 - <s>way of adding more channels easily</s>
 
 - tests
+  - __front-end__
+  - pub/sub tests?
 - about page
 - transitions look glitchy on live site
 - research how blocking scraper is / how it affects UX while running
