@@ -9,7 +9,7 @@ export default ChannelList = ({ channels }) =>
 
     <TitleBar title="IDW Channels"></TitleBar>
 
-    <div className="container bg-dark">
+    <div className="Section container bg-dark">
       <FlipMoveList>
         {renderChannels(channels)}
       </FlipMoveList>

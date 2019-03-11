@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 const COL_TEXT = {
   'viewCount': 'Views',
@@ -8,7 +9,9 @@ const COL_TEXT = {
 };
 
 const SortArrow = ({ reverse }) =>
-  reverse ? ' ^' : ' v'
+  <span className="ml-2">
+    {reverse ? <FaAngleUp className="mb-1" /> : <FaAngleDown />}
+  </span>
 
 const SortButton = ({ col, reverse, sortBy, change }) =>
   <button className="btn btn-dark m-1" onClick={change(col)}>
@@ -17,8 +20,6 @@ const SortButton = ({ col, reverse, sortBy, change }) =>
   </button>
 
 export default SortButtons = ({ ...rest }) =>
-  <>
-    {Object.keys(COL_TEXT).map(col =>
-      <SortButton key={col} col={col} {...rest} />
-    )}
-  </>
+  Object.keys(COL_TEXT).map(col =>
+    <SortButton key={col} col={col} {...rest} />
+  )

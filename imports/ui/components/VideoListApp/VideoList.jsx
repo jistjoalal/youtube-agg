@@ -6,7 +6,7 @@ import FlipMoveList from '../FlipMoveList';
 import Video from './Video';
 
 const VideoList = ({ loading, videos }) =>
-  <div className="VideoList container bg-dark shadow">
+  <div className="Section container bg-dark shadow">
 
     <FlipMoveList>
       {videos.map(video =>
