@@ -11,11 +11,28 @@ export const parseChannel = html => {
   const _id = parseAttr(html, '.yt-uix-subscription-button', 'data-channel-external-id');
   const title = parseAttr(html, '.appbar-nav-avatar', 'title');
   const avatar = parseAttr(html, '.appbar-nav-avatar', 'src');
+  const banner = parseBanner(html);
   return {
     _id,
     title,
     avatar,
+    banner,
   };
+}
+
+const parseBanner = html => {
+  const style = parseChildText(html, '#gh-banner > style', 0);
+  const pat0 = 'yt3\\.ggpht\\.com/.*\\)';
+  const pat1 = '/yts/img/channels/c4/.*\\)';
+  const matches0 = style.match(pat0);
+  const matches1 = style.match(pat1);
+  if (matches0) {
+    return 'https://' + matches0[0].slice(0, -1);
+  }
+  else if (matches1) {
+    return 'https://youtube.com' + matches1[0].slice(0, -1);
+  }
+  return 'err';
 }
 
 // returns array of parsed (object) videos
