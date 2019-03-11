@@ -1,5 +1,7 @@
 @import '{}/node_modules/bootstrap/scss/bootstrap';
 
+// base
+
 body {
   background: #e3e3e3;
 }
@@ -7,6 +9,8 @@ body {
 .serif {
   font-family: 'Playfair Display', serif;
 }
+
+// components
 
 .VideoEmbed {
   position: relative;
@@ -21,6 +25,17 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.VideoEmbed__loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .VideoPreview {
@@ -53,6 +68,20 @@ body {
 .Section {
   max-width: 1000px;
 }
+
+.LoadingIcon {
+  font-size: 300%;
+  animation: spin 2000ms ease-in-out infinite;
+}
+
+// media
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 @media (max-width: 600px) {
   .VideoPreview {
