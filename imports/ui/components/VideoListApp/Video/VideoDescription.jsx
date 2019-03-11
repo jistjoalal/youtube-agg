@@ -11,6 +11,7 @@ export default VideoDescription = ({ video }) => {
   const views = commaNum(video.viewCount) + ' views';
   const duration = moment.duration(video.duration, 'seconds').humanize();
   const url = `https://youtube.com/watch?v=${video._id}`;
+  const vps = video.viewsPerSec.toFixed(2) + ' v/s';
   return (
     <>
       <a href={url} target="blank">
@@ -20,7 +21,7 @@ export default VideoDescription = ({ video }) => {
         <h5 className="text-muted">{video.channelTitle}</h5>
       </Link>
       <span className="text-muted">
-        {duration} - {views} - {postedAgo}
+        {duration} - {views} ({vps}) - {postedAgo}
       </span>
     </>
   );

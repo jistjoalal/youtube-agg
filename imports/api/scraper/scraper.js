@@ -43,15 +43,9 @@ const updateVideo = vid => {
     // it's more accurate the less it's updated
     vid.postedTime = cur.postedTime;
 
-    // track updates
-    vid.updateCount++;
-
     // track view growth
-    const deltaViews = vid.viewCount - cur.viewCount;
-    const deltaTime = vid.updatedAt - cur.updatedAt;
-    const viewGrowth = deltaViews / deltaTime;
-    // average old w/ new
-    vid.viewGrowth = (viewGrowth + cur.viewGrowth) / 2;
+    const deltaTime = (Date.now() - vid.postedTime) / 1000;
+    vid.viewsPerSec = vid.viewCount / deltaTime;
 
     return Videos.update(q, vid);
   }
