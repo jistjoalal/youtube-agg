@@ -40,9 +40,7 @@ and rendered to the client using
 - <s>about page</s>
 - <s>add an icon library</s>
 - <s>google fonts for the title</s>
-
-- attempting to track view growth for a trending sort
-  - see how it works on live
+- <s>"view growth" tracking</s>
 
 - more channel data
   - (url, banner, subs, ttl views, post freq.)

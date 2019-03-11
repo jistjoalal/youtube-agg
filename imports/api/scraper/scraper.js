@@ -44,14 +44,21 @@ const updateVideo = vid => {
     vid.postedTime = cur.postedTime;
 
     // track view growth
-    const deltaTime = (Date.now() - vid.postedTime) / 1000;
-    vid.viewsPerSec = vid.viewCount / deltaTime;
+    vid.viewsPerSec = viewsPerSec(vid);
 
     return Videos.update(q, vid);
   }
 
   // video is new
   else {
+    // initial view growth
+    vid.viewsPerSec = viewsPerSec(vid);
+
     return Videos.insert(vid);
   }
+}
+
+const viewsPerSec = vid => {
+  const deltaTime = (Date.now() - vid.postedTime) / 1000;
+  return vid.viewCount / deltaTime;
 }

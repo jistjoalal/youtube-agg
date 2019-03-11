@@ -11,7 +11,7 @@ export default VideoDescription = ({ video }) => {
   const views = commaNum(video.viewCount) + ' views';
   const duration = moment.duration(video.duration, 'seconds').humanize();
   const url = `https://youtube.com/watch?v=${video._id}`;
-  const vps = video.viewsPerSec.toFixed(2) + ' v/s';
+  const vps = (video.viewsPerSec || 0).toFixed(2) + ' v/s';
   return (
     <div className="d-flex flex-column justify-content-center">
       <a href={url} target="blank">
