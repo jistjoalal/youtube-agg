@@ -1,25 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const TitleLinks = ({ title }) =>
-  <div>
-    {title != "IDW" &&
-      <Link className="btn btn-secondary" to="/">
-        Home
-      </Link>
-    }
-    {title != "IDW Channels" &&
-      <Link className="btn btn-secondary" to="/channels">
-        All Channels
-      </Link>
-    }
-    {title != "About" &&
-      <Link className="btn btn-secondary" to="/about">
-        About
-      </Link>
-    }
-  </div>
-  
+import TitleLinks from './TitleLinks';
+
 export default TitleBar = ({ children, title }) =>
   <nav className="TitleBar navbar bg-secondary text-dark border-bottom d-flex flex-column">
 

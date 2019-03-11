@@ -38,13 +38,8 @@ and rendered to the client using
 - <s>channel list page</s>
 - <s>way of adding more channels easily</s>
 - <s>about page</s>
+- <s>add an icon library</s>
 
-- transitions look glitchy on live site
-- research how blocking scraper is / how it affects UX while running
-  - i think it refreshes page on the hour?
-- redirect to err page when offline
-
-- add an icon library
 - google fonts for the title
 - pro styles
 
