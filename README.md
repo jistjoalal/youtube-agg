@@ -39,9 +39,7 @@ and rendered to the client using
 - <s>way of adding more channels easily</s>
 - <s>about page</s>
 - <s>add an icon library</s>
-
-- google fonts for the title
-- pro styles
+- <s>google fonts for the title</s>
 
 - more channel data
   - (url, banner, subs, ttl views, post freq.)
