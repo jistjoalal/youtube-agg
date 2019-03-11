@@ -50,7 +50,8 @@ const updateVideo = vid => {
     const deltaViews = vid.viewCount - cur.viewCount;
     const deltaTime = vid.updatedAt - cur.updatedAt;
     const viewGrowth = deltaViews / deltaTime;
-    vid.viewGrowth = (viewGrowth + cur.viewGrowth) / vid.updateCount;
+    // average old w/ new
+    vid.viewGrowth = (viewGrowth + cur.viewGrowth) / 2;
 
     return Videos.update(q, vid);
   }
