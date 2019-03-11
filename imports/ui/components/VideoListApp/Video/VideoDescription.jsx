@@ -13,7 +13,7 @@ export default VideoDescription = ({ video }) => {
   const url = `https://youtube.com/watch?v=${video._id}`;
   const vps = video.viewsPerSec.toFixed(2) + ' v/s';
   return (
-    <>
+    <div className="d-flex flex-column justify-content-center p-1">
       <a href={url} target="blank">
         <h4>{video.title}</h4>
       </a>
@@ -23,6 +23,6 @@ export default VideoDescription = ({ video }) => {
       <span className="text-muted">
         {duration} - {views} ({vps}) - {postedAgo}
       </span>
-    </>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ export default class Video extends React.Component {
     const { open } = this.state;
     const { video } = this.props;
     return (
-      <div className="row border-bottom p-2 text-light">
+      <div className="row border-bottom p-2 d-flex">
         { open ?
           <VideoPlayer video={video} close={this.toggle(false)} />
         : <VideoPreview video={video} open={this.toggle(true)} /> }
