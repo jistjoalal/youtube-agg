@@ -4,6 +4,7 @@ const COL_TEXT = {
   'viewCount': 'Views',
   'postedTime': 'Upload Date',
   'duration': 'Duration',
+  'viewGrowth': 'Trending',
 };
 
 const SortArrow = ({ reverse }) =>

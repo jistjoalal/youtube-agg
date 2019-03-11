@@ -34,8 +34,29 @@ const updateChannel = channel => {
 const updateVideo = vid => {
   if (!vid) return;
   const q = { _id: vid._id };
-  if (Videos.findOne(q)) {
+  const cur = Videos.findOne(q);
+
+  // video is not new
+  if (cur) {
+    // don't overwrite postedTime
+    // since it's a weird reverse timeago calculation
+    // it's more accurate the less it's updated
+    vid.postedTime = cur.postedTime;
+
+    // track updates
+    vid.updateCount++;
+
+    // track view growth
+    const deltaViews = vid.viewCount - cur.viewCount;
+    const deltaTime = vid.updatedAt - cur.updatedAt;
+    const viewGrowth = deltaViews / deltaTime;
+    vid.viewGrowth = (viewGrowth + cur.viewGrowth) / vid.updateCount;
+
     return Videos.update(q, vid);
   }
-  return Videos.insert(vid);
+
+  // video is new
+  else {
+    return Videos.insert(vid);
+  }
 }

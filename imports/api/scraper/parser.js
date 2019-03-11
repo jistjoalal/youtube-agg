@@ -45,6 +45,9 @@ export const parseVid = (html, channel) => {
     viewCount : parseViewCount(html),
     duration : parseDuration(html),
     postedTime : parsePostedTime(html),
+    viewGrowth: 0,
+    updateCount: 0,
+    updatedAt: Date.now(),
   }; 
 }
 
