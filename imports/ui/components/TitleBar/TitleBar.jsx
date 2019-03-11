@@ -8,7 +8,7 @@ export default TitleBar = ({ children, title }) =>
     <h1 className="serif">{title}</h1>
 
     {children &&
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center flex-wrap">
         {children}
       </div>
     }
