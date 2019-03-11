@@ -7,7 +7,7 @@ export default About = _ =>
   <div>
     <TitleBar title="About"></TitleBar>
 
-    <div className="container bg-dark p-2">
+    <div className="Section container bg-dark p-2">
 
       <div className="jumbotron mb-2">
 
