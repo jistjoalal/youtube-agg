@@ -30,6 +30,7 @@ body {
 .VideoPreview__thumb {
   width: 200px;
   height: auto;
+  margin-right: 8px;
 }
 
 .VideoList {
@@ -40,5 +41,9 @@ body {
   .VideoPreview {
     flex-direction: column;
     justify-self: center;
+  }
+  .VideoPreview__thumb {
+    width: 300px;
+    margin-bottom: 8px;
   }
 }
