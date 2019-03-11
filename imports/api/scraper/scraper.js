@@ -18,9 +18,23 @@ export const scrapeChannel = _id => {
       updateChannel(channel);
 
       parseVideos(data, channel).forEach(updateVideo);
+
+      updateViewGrowth();
       
     })
     .catch(err => console.log(err))
+}
+
+const updateViewGrowth = _ => {
+  Videos.find({}).fetch().forEach(video => {
+    const deltaTime = (Date.now() - video.postedTime) / 1000;
+    const viewsPerSec = video.viewCount / deltaTime;
+    const vid = {
+      viewsPerSec,
+      ...video,
+    };
+    Videos.update(video, vid);
+  });
 }
 
 const updateChannel = channel => {
@@ -43,22 +57,12 @@ const updateVideo = vid => {
     // it's more accurate the less it's updated
     vid.postedTime = cur.postedTime;
 
-    // track view growth
-    vid.viewsPerSec = viewsPerSec(vid);
-
     return Videos.update(q, vid);
   }
 
   // video is new
   else {
-    // initial view growth
-    vid.viewsPerSec = viewsPerSec(vid);
-
     return Videos.insert(vid);
   }
 }
 
-const viewsPerSec = vid => {
-  const deltaTime = (Date.now() - vid.postedTime) / 1000;
-  return vid.viewCount / deltaTime;
-}
