@@ -12,9 +12,7 @@ that grabs the most recent videos every hour using
 [SyncedCron](https://github.com/percolatestudio/meteor-synced-cron).
 
 - [server/main.js](https://github.com/jistjoalal/youtube-agg/blob/master/server/main.js)
-  - [imports/api/videos](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/videos.js)
-  - [imports/api/channels](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/channels.js)
-  - [imports/api/scraper](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api/scraper)
+  - [imports/api](https://github.com/jistjoalal/youtube-agg/blob/master/imports/api)
 
 The scraped video data (url, thumbnail, etc.) is saved to
 [Meteor/Mongo](https://docs.meteor.com/#/full/)
@@ -23,11 +21,7 @@ and rendered to the client using
 
 - [client/main.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/client/main.jsx)
   - [imports/Routes.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/Routes.jsx)
-    - [imports/ui/pages/Home.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/Home.jsx)
-    - [imports/ui/pages/Channel.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/Channel.jsx)
-    - [imports/ui/pages/ChannelList.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/ChannelList.jsx)
-    - [imports/ui/pages/RequestChannel.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/RequestChannel.jsx)
-    - [imports/ui/pages/About.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/About.jsx)
+    - [imports/ui/pages](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages)
 
 ## ideas / todos
 - <s>embedded playback</s>
