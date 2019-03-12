@@ -12,6 +12,6 @@ export default PageControls = ({ autoScroll, nextPage, toggleAutoScroll }) =>
     <button className={`btn btn-secondary shadow ${autoScroll ? 'active' : ''}`}
       onClick={toggleAutoScroll}
     >
-      {autoScroll ? <u>Scroll <FaInfinity /></u> : 'Scroll ∞'}
+      Scroll {autoScroll ? <FaInfinity /> : '∞'}
     </button>
   </div>
