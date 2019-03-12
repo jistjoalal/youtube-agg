@@ -37,15 +37,16 @@ export default class App extends React.Component {
 
         <TitleBar title={title}>
 
-          <div>
+          <form onSubmit={this.submitSearch}>
             <input
               className="form-control"
               type="text"
+              name="searchTerm"
               value={searchTerm}
               onChange={this.searchChange}
               placeholder="Search..."
             />  
-          </div>
+          </form>
 
           <SortButtons
             sortBy={sortBy}
@@ -71,6 +72,10 @@ export default class App extends React.Component {
 
       </div>
     )
+  }
+  submitSearch = e => {
+    e.preventDefault();
+    e.target.searchTerm.blur();
   }
   searchChange = e => {
     
