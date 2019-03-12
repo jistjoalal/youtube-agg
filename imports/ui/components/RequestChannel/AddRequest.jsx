@@ -18,6 +18,14 @@ export default class AddRequest extends React.Component {
           </p>
         }
 
+        <p className="lead">
+          Someone Missing?
+        </p>
+        <p className="text-muted">
+          Let us know if you've got a lead on a YouTuber producing honest,
+          meaningful conversation.
+        </p>
+
         <div className="form-group">
           <label>Channel Name</label>
           <input className="form-control" type="text" ref="channel" />
