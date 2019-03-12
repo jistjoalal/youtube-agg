@@ -30,8 +30,8 @@ const updateViewGrowth = _ => {
     const deltaTime = (Date.now() - video.postedTime) / 1000;
     const viewsPerSec = video.viewCount / deltaTime;
     const vid = {
-      viewsPerSec,
       ...video,
+      viewsPerSec,
     };
     Videos.update(video, vid);
   });

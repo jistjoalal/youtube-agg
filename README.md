@@ -25,6 +25,9 @@ and rendered to the client using
   - [imports/Routes.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/Routes.jsx)
     - [imports/ui/pages/Home.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/Home.jsx)
     - [imports/ui/pages/Channel.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/Channel.jsx)
+    - [imports/ui/pages/ChannelList.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/ChannelList.jsx)
+    - [imports/ui/pages/RequestChannel.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/RequestChannel.jsx)
+    - [imports/ui/pages/About.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages/About.jsx)
 
 ## ideas / todos
 - <s>embedded playback</s>
@@ -43,15 +46,12 @@ and rendered to the client using
 - <s>"view growth" tracking</s>
 - <s>search bar</s>
 
-- video doesn't autoplay on mobile
-- possible to track peak view growth?
+- a way to request/vote on channel to be added?
 
-- more channel data
+- more channel data?
   - (url, banner, subs, ttl views, post freq.)
   - sort channels
-- a way to request/vote on channel to be added?
 - notifications for new videos?
-- a way of tagging videos w/ keywords?
 
 ## local
 ```sh

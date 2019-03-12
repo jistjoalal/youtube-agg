@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './ui/pages/Home';
 import Channel from './ui/pages/Channel';
 import ChannelList from './ui/pages/ChannelList';
+import RequestChannel from './ui/pages/RequestChannel';
 import About from './ui/pages/About';
 
 export default Routes = _ =>
@@ -22,6 +23,9 @@ export default Routes = _ =>
 
       {/* channels */}
       <Route path="/channels" exact component={ChannelList} />
+
+      {/* request-channel */}
+      <Route path="/request-channel" exact component={RequestChannel} />
 
       {/* about */}
       <Route path="/about" component={About} />
