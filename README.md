@@ -40,8 +40,12 @@ and rendered to the client using
 - <s>"view growth" tracking</s>
 - <s>search bar</s>
 
-- a way to request/vote on channel to be added?
+- channel requests
+  - form errs
+  - simplschema
+  - a way of limiting requests?
 
+- set window title
 - more channel data?
   - (url, banner, subs, ttl views, post freq.)
   - sort channels

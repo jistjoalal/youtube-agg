@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TitleBar from './TitleBar';
+import FlipMoveList from './FlipMoveList';
 
 export default class RequestChannel extends React.Component {
   render() {
@@ -17,12 +18,16 @@ export default class RequestChannel extends React.Component {
 
               <div className="form-group">
                 <label>Channel Name</label>
-                <input className="form-control" type="text" name="channel" />
+                <input className="form-control" type="text" ref="channel" />
               </div>
 
               <button className="btn btn-dark">Submit</button>
 
             </form>
+
+            <FlipMoveList>
+              { this.renderTopRequests() }
+            </FlipMoveList>
 
           </div>
 
@@ -31,9 +36,34 @@ export default class RequestChannel extends React.Component {
       </div>
     );
   }
+  renderTopRequests() {
+    const { channelRequests } = this.props;
+    return (
+      channelRequests.map(({ _id, count }) =>
+        <div key={_id}>
+          <p>
+            {_id} - {count}
+          </p>
+          <button onClick={this.voteOn(_id)}>+</button>
+        </div>
+      )
+    );
+  }
+  voteOn = _id => e => {
+    e.preventDefault();
+    Meteor.call('channelRequests.inc', _id, (err, res) => {
+      if (err) return console.log(err);
+    });
+  }
   handleSubmit = e => {
     e.preventDefault();
-    const channel = e.target.channel.value;
-    console.log(channel);
+    const channel = this.refs.channel.value;
+    Meteor.call('channelRequests.inc', channel, (err, res) => {
+      if (err) return console.log(err);
+      else {
+        this.refs.channel.value = '';
+        this.refs.channel.blur();
+      }
+    });
   }
 }

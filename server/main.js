@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
 import scrape from '../imports/api/scraper';
+import ChannelRequests from '../imports/api/channelRequests';
 
 Meteor.startup(_ => {
   if (Meteor.isDevelopment) {
