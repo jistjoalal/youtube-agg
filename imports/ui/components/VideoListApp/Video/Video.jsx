@@ -13,6 +13,7 @@ export default class Video extends React.Component {
   render() {
     const { open } = this.state;
     const { video } = this.props;
+    if (!video) return null;
     return (
       <div className="row border-bottom p-2 d-flex">
         { open ?

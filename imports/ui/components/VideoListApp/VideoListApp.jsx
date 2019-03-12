@@ -80,7 +80,10 @@ export default class App extends React.Component {
   searchChange = e => {
     
     const searchTerm = e.target.value;
-    this.setState({ searchTerm });
+    this.setState({
+      searchTerm,
+      page: 1,
+    });
 
     // routing
     const { pathname } = this.props.history.location;

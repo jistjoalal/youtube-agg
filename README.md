@@ -44,6 +44,12 @@ and rendered to the client using
   - style Request component
   - a way of limiting requests?
 
+- flipmove leaving leftover elements
+  - currently just rendering as null, need to remove
+- render title links based on route (show home w/ non-null searchterm)
+- close button padding
+- make channel links buttons?
+- icons/emojis for sort buttons/description?
 - set window title
 - more channel data?
   - (url, banner, subs, ttl views, post freq.)
