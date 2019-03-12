@@ -17,7 +17,7 @@ export default VideoDescription = ({ video }) => {
       <a href={url} target="blank">
         <h4>{video.title}</h4>
       </a>
-      <Link to={`/channel/${video.channelId}`}>
+      <Link to={`/channel/${video.channelId}/`}>
         <h5 className="text-muted">{video.channelTitle}</h5>
       </Link>
       <span className="text-muted">

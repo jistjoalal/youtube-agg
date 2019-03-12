@@ -20,6 +20,8 @@ const SortButton = ({ col, reverse, sortBy, change }) =>
   </button>
 
 export default SortButtons = ({ ...rest }) =>
-  Object.keys(COL_TEXT).map(col =>
-    <SortButton key={col} col={col} {...rest} />
-  )
+  <div>
+    {Object.keys(COL_TEXT).map(col =>
+      <SortButton key={col} col={col} {...rest} />
+    )}
+  </div>

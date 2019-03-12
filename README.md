@@ -41,6 +41,10 @@ and rendered to the client using
 - <s>add an icon library</s>
 - <s>google fonts for the title</s>
 - <s>"view growth" tracking</s>
+- <s>search bar</s>
+
+- video doesn't autoplay on mobile
+- possible to track peak view growth?
 
 - more channel data
   - (url, banner, subs, ttl views, post freq.)
@@ -48,7 +52,6 @@ and rendered to the client using
 - a way to request/vote on channel to be added?
 - notifications for new videos?
 - a way of tagging videos w/ keywords?
-- search bar?
 
 ## local
 ```sh

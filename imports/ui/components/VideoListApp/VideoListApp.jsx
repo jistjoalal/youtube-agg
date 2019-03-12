@@ -13,27 +13,52 @@ export default class App extends React.Component {
       autoScroll: false,
       reverse: false,
       page: 1,
+      searchTerm: '',
     };
   }
   componentDidMount() {
+
     document.addEventListener('scroll', this.handleScroll);
+
+    // routing
+    const { searchTerm } = this.props.match.params;
+    if (searchTerm) {
+      this.setState({ searchTerm });
+    }
   }
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll);
   }
   render() {
-    const { sortBy, reverse, page, autoScroll } = this.state;
+    const { sortBy, reverse, page, autoScroll, searchTerm } = this.state;
     const { query, title } = this.props;
     return (
       <div className="d-flex flex-column justify-content-center">
 
         <TitleBar title={title}>
 
-          <SortButtons sortBy={sortBy} reverse={reverse} change={this.changeSort} />
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={this.searchChange}
+            placeholder="Search..."
+          />
+
+          <SortButtons
+            sortBy={sortBy}
+            reverse={reverse}
+            change={this.changeSort}
+          />
             
         </TitleBar>
 
-        <VideoList query={query} sortBy={sortBy} reverse={reverse} page={page} />
+        <VideoList
+          query={query}
+          sortBy={sortBy}
+          reverse={reverse}
+          page={page}
+          searchTerm={searchTerm}
+        />
 
         <PageControls
           autoScroll={autoScroll}
@@ -43,6 +68,18 @@ export default class App extends React.Component {
 
       </div>
     )
+  }
+  searchChange = e => {
+    
+    const searchTerm = e.target.value;
+    this.setState({ searchTerm });
+
+    // routing
+    const { pathname } = this.props.history.location;
+    const sliceIdx = pathname.lastIndexOf('/');
+    const rootPath = pathname.slice(0, sliceIdx)
+    const searchPath = `/@${searchTerm}`;
+    this.props.history.push(rootPath + searchPath)
   }
   handleScroll = event => {
     const { autoScroll } = this.state;
