@@ -37,12 +37,15 @@ export default class App extends React.Component {
 
         <TitleBar title={title}>
 
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={this.searchChange}
-            placeholder="Search..."
-          />
+          <div>
+            <input
+              className="form-control"
+              type="text"
+              value={searchTerm}
+              onChange={this.searchChange}
+              placeholder="Search..."
+            />  
+          </div>
 
           <SortButtons
             sortBy={sortBy}
