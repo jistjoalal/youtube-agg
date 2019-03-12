@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
+import '../imports/config/simple-schema-config';
+
 import scrape from '../imports/api/scraper';
 import ChannelRequests from '../imports/api/channelRequests';
 

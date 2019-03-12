@@ -41,8 +41,7 @@ and rendered to the client using
 - <s>search bar</s>
 
 - channel requests
-  - form errs
-  - simplschema
+  - style Request component
   - a way of limiting requests?
 
 - set window title

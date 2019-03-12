@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo';
+import SimpleSchema from 'simpl-schema';
 
 export default ChannelRequests = new Mongo.Collection('channelRequests');
 
@@ -15,6 +16,16 @@ if (Meteor.isServer) {
 
 Meteor.methods({
   'channelRequests.inc'(_id) {
+
+    new SimpleSchema({
+      _id: {
+        label: 'Channel Name',
+        type: String,
+        min: 1,
+        max: 100,
+      },
+    }).validate({ _id });
+    
     const query = { _id };
     const updates = { $inc: { count: 1 } };
     const cr = ChannelRequests.findOne({ _id });
