@@ -65,6 +65,11 @@ body {
   margin-right: 8px;
 }
 
+.Request {
+  display: flex;
+  align-items: center;
+}
+
 .Section {
   max-width: 1000px;
 }
@@ -92,5 +97,8 @@ body {
     width: 300px;
     height: 168px;
     margin-bottom: 8px;
+  }
+  .Request {
+    flex-direction: column;
   }
 }

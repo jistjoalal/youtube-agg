@@ -14,17 +14,34 @@ export default class RequestChannel extends React.Component {
 
         <TitleBar title="Request a Channel"></TitleBar>
 
-        <div className="section container bg-dark p-2">
+        <div className="Section container bg-dark p-2">
 
-          <div className="jumbotron mb-0">
+          <div className="d-flex bg-light">
 
-            <AddRequest />
+            <div className="w-50 p-2 border-right">
 
-            <FlipMoveList>
-              {channelRequests.map(request =>
-                <Request key={request._id} request={request} />
-              )}
-            </FlipMoveList>
+              <p className="lead">
+                Voting
+              </p>
+              <p className="text-muted">
+                Already been suggested? Take part in the democratic process and
+                give your favorite candidate some clicks.
+              </p>
+
+              {channelRequests.length ?
+                <FlipMoveList>
+                  {channelRequests.map(request =>
+                    <Request key={request._id} request={request} />
+                  )}
+                </FlipMoveList> 
+              : <p>None so far!</p>
+              }
+             
+            </div>
+
+            <div className="mr-2 p-2">
+              <AddRequest />
+            </div>
 
           </div>
 

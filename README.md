@@ -39,10 +39,7 @@ and rendered to the client using
 - <s>google fonts for the title</s>
 - <s>"view growth" tracking</s>
 - <s>search bar</s>
-
-- channel requests
-  - style Request component
-  - a way of limiting requests?
+- <s>channel requests</s>
 
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove
