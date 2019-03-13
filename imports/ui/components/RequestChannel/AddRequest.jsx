@@ -10,30 +10,34 @@ export default class AddRequest extends React.Component {
   render() {
     const { err } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-
-        {err &&
-          <p className="alert alert-dark">
-            {err}
-          </p>
-        }
+      <div className="AddRequest mr-2 p-2">
 
         <p className="lead">
           Someone Missing?
         </p>
+
         <p className="text-muted">
           Let us know if you've got a lead on a YouTuber producing honest,
           meaningful conversation.
         </p>
 
-        <div className="form-group">
-          <label>Channel Name</label>
-          <input className="form-control" type="text" ref="channel" />
-        </div>
+        <form onSubmit={this.handleSubmit}>
 
-        <button className="btn btn-dark">Submit</button>
+          {err &&
+            <p className="alert alert-dark">
+              {err}
+            </p>
+          }
 
-      </form>
+          <div className="form-group">
+            <label>Channel Name</label>
+            <input className="form-control" type="text" ref="channel" />
+          </div>
+
+          <button className="btn btn-dark">Submit</button>
+
+        </form>
+      </div>
     );
   }
   handleSubmit = e => {

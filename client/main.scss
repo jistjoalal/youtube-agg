@@ -70,6 +70,14 @@ body {
   align-items: center;
 }
 
+.RequestChannel {
+  display: flex;
+}
+
+.AddRequest, .RequestVoting {
+  width: 50%;
+}
+
 .Section {
   max-width: 1000px;
 }
@@ -101,4 +109,11 @@ body {
   .Request {
     flex-direction: column;
   }
+  .AddRequest, .RequestVoting {
+    width: 100%;
+  }
+  .RequestChannel {
+    flex-direction: column;
+  }
+
 }

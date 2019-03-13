@@ -41,6 +41,7 @@ and rendered to the client using
 - <s>search bar</s>
 - <s>channel requests</s>
 
+- inf scroll not working on mobile
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove
 - render title links based on route (show home w/ non-null searchterm)

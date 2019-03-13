@@ -1,10 +1,8 @@
 import React from 'react';
 
 import TitleBar from '../TitleBar';
-import FlipMoveList from '../FlipMoveList';
-
-import Request from './Request';
 import AddRequest from './AddRequest';
+import RequestVoting from './RequestVoting';
 
 export default class RequestChannel extends React.Component {
   render() {
@@ -16,32 +14,11 @@ export default class RequestChannel extends React.Component {
 
         <div className="Section container bg-dark p-2">
 
-          <div className="d-flex bg-light">
+          <div className="RequestChannel bg-light">
 
-            <div className="w-50 p-2 border-right">
+            <AddRequest />
 
-              <p className="lead">
-                Voting
-              </p>
-              <p className="text-muted">
-                Already been suggested? Take part in the democratic process and
-                give your favorite candidate some clicks.
-              </p>
-
-              {channelRequests.length ?
-                <FlipMoveList>
-                  {channelRequests.map(request =>
-                    <Request key={request._id} request={request} />
-                  )}
-                </FlipMoveList> 
-              : <p>None so far!</p>
-              }
-             
-            </div>
-
-            <div className="mr-2 p-2">
-              <AddRequest />
-            </div>
+            <RequestVoting channelRequests={channelRequests} />
 
           </div>
 
