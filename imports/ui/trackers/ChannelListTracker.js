@@ -4,7 +4,11 @@ import Channels from '../../api/channels';
 
 export default ChannelListTracker = withTracker(_ => {
   Meteor.subscribe('channels');
-  const channels = Channels.find().fetch();
+  const query = {};
+  const projection = {
+    sort: { title: 1 },
+  }
+  const channels = Channels.find(query, projection).fetch();
   return {
     channels,
   };

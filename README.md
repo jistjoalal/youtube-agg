@@ -37,7 +37,8 @@ meteor
 - the project doesn't come with a populated db. To have your
 server search for videos, click the scrape button that only
 appears in development mode.
-- this could take a minute or two
+- this could take a minute or two, and youtube might reject some of your
+queries, so you may need to click the magic button more than once.
 
 
 ## ideas / todos
