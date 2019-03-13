@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo';
+import scrape from './scraper';
 
 export default Videos = new Mongo.Collection('videos', {
   collation: {
@@ -16,3 +17,11 @@ if (Meteor.isServer) {
     return Videos.find(query, projection);
   });
 }
+
+Meteor.methods({
+  'videos.scrape'() {
+    if (Meteor.isDevelopment && Meteor.isServer) {
+      scrape();
+    }
+  }
+});
