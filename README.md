@@ -41,15 +41,13 @@ and rendered to the client using
 - <s>search bar</s>
 - <s>channel requests</s>
 
-
 bugs:
+- click home w/ search term doesn't clear search
 - inf scroll not working on mobile
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove
 
 todo:
-- move view growth to parsing now that all videos in collection on live
-    have a viewsPerSec column set.
 - render title links based on route (show home w/ non-null searchterm)
 
 ideas:
