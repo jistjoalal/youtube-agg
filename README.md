@@ -51,7 +51,6 @@ todo:
 - move view growth to parsing now that all videos in collection on live
     have a viewsPerSec column set.
 - render title links based on route (show home w/ non-null searchterm)
-- close button padding
 
 ideas:
 - make channel links buttons?

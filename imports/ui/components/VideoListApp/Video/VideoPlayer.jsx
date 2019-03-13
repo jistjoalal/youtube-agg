@@ -6,9 +6,9 @@ import VideoDescription from './VideoDescription';
 
 export default VideoPlayer = ({ video, close }) =>
   <>
-    <div className="w-100 d-flex flex-column align-items-center">
+    <div className="w-100 d-flex flex-column align-items-center mb-2">
       <button
-        className="btn btn-dark text-danger align-self-end"
+        className="btn btn-dark text-danger align-self-end mb-1"
         data-toggle="tooltip"
         title="Close"
         onClick={close}
