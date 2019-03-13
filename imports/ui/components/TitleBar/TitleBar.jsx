@@ -7,7 +7,7 @@ export default TitleBar = ({ children, title }) =>
 
     <TitleLinks title={title} />
 
-    <h1 className="serif mx-2">{title}</h1>
+    <h1 className="serif mx-3 my-0">{title}</h1>
     
     {children}
 

@@ -46,12 +46,7 @@ bugs:
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove
 
-todo:
-- render title links based on route (show home w/ non-null searchterm)
-
 ideas:
-- make channel links buttons?
-- icons/emojis for sort buttons/description?
 - more channel data?
   - (url, banner, subs, ttl views, post freq.)
   - sort channels

@@ -16,7 +16,7 @@ const TitleA = withTooltip(Anchor);
 
 export default TitleLinks = ({ title }) => {
   return (
-    <div>
+    <div className="m-1">
       <TitleLink
         to="/"
         title="Home"

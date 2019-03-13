@@ -39,16 +39,18 @@ export default class VideoListApp extends React.Component {
 
         <TitleBar title={title}>
 
-          <form onSubmit={this.submitSearch}>
-            <input
-              className="form-control"
-              type="text"
-              name="searchTerm"
-              value={searchTerm}
-              onChange={this.searchChange}
-              placeholder="Search..."
-            />  
-          </form>
+          <div className="m-1">
+            <form onSubmit={this.submitSearch}>
+              <input
+                className="form-control"
+                type="text"
+                name="searchTerm"
+                value={searchTerm}
+                onChange={this.searchChange}
+                placeholder="Search..."
+              />  
+            </form> 
+          </div>
 
           <SortButtons
             sortBy={sortBy}

@@ -2,10 +2,10 @@ import React from 'react';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 const COL_TEXT = {
-  'viewCount': 'Views',
   'postedTime': 'Upload Date',
-  'duration': 'Duration',
   'viewsPerSec': 'Trending',
+  'duration': 'Duration',
+  'viewCount': 'Views',
 };
 
 const SortArrow = ({ reverse }) =>
@@ -20,7 +20,7 @@ const SortButton = ({ col, reverse, sortBy, change }) =>
   </button>
 
 export default SortButtons = ({ ...rest }) =>
-  <div>
+  <div className="d-flex justify-content-center flex-wrap m-1">
     {Object.keys(COL_TEXT).map(col =>
       <SortButton key={col} col={col} {...rest} />
     )}
