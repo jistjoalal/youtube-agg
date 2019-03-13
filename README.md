@@ -41,14 +41,21 @@ and rendered to the client using
 - <s>search bar</s>
 - <s>channel requests</s>
 
+
+bugs:
 - inf scroll not working on mobile
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove
+
+todo:
+- move view growth to parsing now that all videos in collection on live
+    have a viewsPerSec column set.
 - render title links based on route (show home w/ non-null searchterm)
 - close button padding
+
+ideas:
 - make channel links buttons?
 - icons/emojis for sort buttons/description?
-- set window title
 - more channel data?
   - (url, banner, subs, ttl views, post freq.)
   - sort channels

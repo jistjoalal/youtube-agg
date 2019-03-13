@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import TitleBar from '../TitleBar';
 import VideoList from './VideoList';
@@ -33,7 +34,11 @@ export default class App extends React.Component {
     const { sortBy, reverse, page, autoScroll, searchTerm } = this.state;
     const { query, title } = this.props;
     return (
-      <div className="d-flex flex-column justify-content-center">
+      <div>
+
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
 
         <TitleBar title={title}>
 

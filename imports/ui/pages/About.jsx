@@ -1,10 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 import TitleBar from '../components/TitleBar';
 
 export default About = _ =>
   <div>
+
+    <Helmet>
+      <title>About</title>
+    </Helmet>
+
     <TitleBar title="About"></TitleBar>
 
     <div className="Section container bg-dark p-2">

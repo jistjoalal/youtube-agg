@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 import ChannelLink from './ChannelLink';
@@ -7,6 +8,10 @@ import FlipMoveList from '../FlipMoveList';
 
 export default ChannelList = ({ channels }) =>
   <div>
+
+    <Helmet>
+      <title>IDW Channels</title>
+    </Helmet>
 
     <TitleBar title="IDW Channels">
       <div>
