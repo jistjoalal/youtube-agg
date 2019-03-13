@@ -42,7 +42,6 @@ and rendered to the client using
 - <s>channel requests</s>
 
 bugs:
-- click home w/ search term doesn't clear search
 - inf scroll not working on mobile
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove

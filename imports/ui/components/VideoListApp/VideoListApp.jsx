@@ -6,7 +6,7 @@ import VideoList from './VideoList';
 import SortButtons from './SortButtons';
 import PageControls from './PageControls';
 
-export default class App extends React.Component {
+export default class VideoListApp extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -18,14 +18,11 @@ export default class App extends React.Component {
     };
   }
   componentDidMount() {
-
     document.addEventListener('scroll', this.handleScroll);
-
-    // routing
-    const { searchTerm } = this.props.match.params;
-    if (searchTerm) {
-      this.setState({ searchTerm });
-    }
+    this.setSearchTermFromRoute();
+  }
+  componentDidUpdate() {
+    this.setSearchTermFromRoute();
   }
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll);
@@ -78,29 +75,42 @@ export default class App extends React.Component {
       </div>
     )
   }
-  submitSearch = e => {
-    e.preventDefault();
-    e.target.searchTerm.blur();
-  }
-  searchChange = e => {
-    
-    const searchTerm = e.target.value;
-    this.setState({
-      searchTerm,
-      page: 1,
-    });
-
-    // routing
+  /**
+   * Routing
+   */
+  setRouteFromSearchTerm = searchTerm => {
     const { pathname } = this.props.history.location;
     const sliceIdx = pathname.lastIndexOf('/');
     const rootPath = pathname.slice(0, sliceIdx)
     const searchPath = `/@${searchTerm}`;
     this.props.history.push(rootPath + searchPath)
   }
-  handleScroll = event => {
+  setSearchTermFromRoute = _ => {
+    const searchTerm = this.props.match.params.searchTerm || '';
+    if (searchTerm !== this.state.searchTerm) {
+      this.setState({ searchTerm });
+    }
+  }
+  /**
+   * Events
+   */
+  searchChange = e => {
+    const searchTerm = e.target.value;
+    this.setState({
+      searchTerm,
+      page: 1,
+    });
+    this.setRouteFromSearchTerm(searchTerm);
+  }
+  submitSearch = e => {
+    e.preventDefault();
+    e.target.searchTerm.blur();
+  }
+  handleScroll = e => {
     const { autoScroll } = this.state;
-    const e = event.target.scrollingElement;
-    const atBottom = e.scrollHeight - e.scrollTop === e.clientHeight;
+    const { scrollHeight, scrollTop, clientHeight }
+      = e.target.scrollingElement;
+    const atBottom = scrollHeight - scrollTop === clientHeight;
     if (atBottom && autoScroll) {
       this.nextPage();
     }
