@@ -68,6 +68,7 @@ ideas:
 - loading/error when disconnected from server?
 - more channel data?
   - calculate ttl views, post freq.
+  - scrape channel about page
   - social links
   - sort channels
   - \# of notification subscribers?

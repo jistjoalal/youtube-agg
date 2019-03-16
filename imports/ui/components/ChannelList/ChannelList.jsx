@@ -14,17 +14,9 @@ export default ChannelList = ({ channels }) =>
 
     <TitleBar title="IDW Channels">
     
-      <div>
-
-        <span className="mr-2">
-          Someone missing?
-        </span>
-        
-        <Link className="button" to="/request-channel">
-          Request a channel
-        </Link>
-
-      </div>
+      <Link className="button-dark" to="/request-channel">
+        Request a Channel
+      </Link>
       
     </TitleBar>
 

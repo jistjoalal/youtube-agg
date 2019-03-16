@@ -13,7 +13,7 @@ export default TitleBar = ({ children, title }) =>
 
     {Meteor.isDevelopment &&
       <button
-        className="button"
+        className="button-dark"
         onClick={_ => Meteor.call('videos.scrape')}
       >
         Scrape

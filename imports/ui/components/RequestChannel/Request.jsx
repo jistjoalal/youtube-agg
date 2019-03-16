@@ -11,10 +11,8 @@ export default class Request extends React.Component {
           className="button-light"
           onClick={this.voteOn}
         >
-          <FaThumbsUp className="mb-2" />
-          
-          <span className="lead m-2">
-            {count}
+          <span className="lead">
+            <FaThumbsUp /> {count}
           </span>
           
         </button>
