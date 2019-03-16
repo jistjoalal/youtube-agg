@@ -59,14 +59,21 @@ queries, so you may need to click the magic button more than once.
 - <s>search bar</s>
 - <s>channel requests</s>
 
+todo:
+
 bugs:
+- viewCount + viewsPerSec were null momentarily on live
+  - this led to viewCount being displayed as 'NaN' 
+  - it was a brand new video with potentially 0 views that caused it
 - inf scroll not working on mobile
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove
 
 ideas:
+- log errors in production
 - loading/error when disconnected from server?
 - more channel data?
   - (url, banner, subs, ttl views, post freq.)
+  - link to youtube channel somewhere
   - sort channels
 - notifications for new videos?
