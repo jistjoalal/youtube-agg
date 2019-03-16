@@ -13,14 +13,19 @@ export default ChannelList = ({ channels }) =>
     </Helmet>
 
     <TitleBar title="IDW Channels">
+    
       <div>
+
         <span className="mr-2">
           Someone missing?
         </span>
+        
         <Link className="button" to="/request-channel">
           Request a channel
         </Link>
+
       </div>
+      
     </TitleBar>
 
     <div className="section">

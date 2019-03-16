@@ -7,12 +7,16 @@ export default VideoPreview = ({ video, open }) =>
   <div className="VideoPreview">
   
     <a href="" onClick={e => { e.preventDefault(); open(); }}>
-      <div className="VideoPreview__play">
-        <FaYoutube className="VideoPreview__playButton" />
-      </div>
-      <img src={video.img} className="VideoPreview__thumb" />
-    </a>
 
+      <div className="VideoPreview__play">
+
+        <FaYoutube className="VideoPreview__playButton" />
+
+      </div>
+      
+      <img src={video.img} className="VideoPreview__thumb" />
+      
+    </a>
 
     <VideoDescription video={video} /> 
       

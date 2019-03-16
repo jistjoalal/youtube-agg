@@ -7,6 +7,7 @@ import VideoDescription from './VideoDescription';
 export default VideoPlayer = ({ video, close }) =>
   <>
     <div className="VideoPlayer">
+
       <button
         className="VideoPlayer__close"
         data-toggle="tooltip"
@@ -15,7 +16,10 @@ export default VideoPlayer = ({ video, close }) =>
       >
         <FaWindowClose />
       </button>
+
       <VideoEmbed _id={video._id} />
+
     </div>
+    
     <VideoDescription video={video} />
   </>
