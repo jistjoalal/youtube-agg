@@ -1,4 +1,4 @@
-import axios from 'axios';
+import fetch from 'node-fetch';
 
 import Videos from '../videos';
 import Channels from '../channels';
@@ -13,13 +13,14 @@ export default scrape = _ => CHANNEL_IDS.forEach(scrapeChannel);
 // save scraped data to db
 const scrapeChannel = _id => {
   const reqUrl = `https://www.youtube.com/channel/${_id}/videos`;
-  axios(reqUrl)
-    .then(({ data }) => {
-
-      const channel = parseChannel(data);
-      updateChannel(channel);
-
-      parseVideos(data, channel).forEach(updateVideo);
+  fetch(reqUrl)
+    .then(res => res.text())
+    .then(html => {
+        // channel
+        const channel = parseChannel(html);
+        updateChannel(channel);
+        // videos
+        parseVideos(html, channel).forEach(updateVideo);
 
     })
     .catch(err => console.log(err))

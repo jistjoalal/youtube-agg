@@ -7,7 +7,7 @@ import ChannelRequests from '../imports/api/channelRequests';
 
 Meteor.startup(_ => {
   if (Meteor.isDevelopment) {
-    // scrape();
+    scrape();
   }
 
   if (Meteor.isProduction) {
