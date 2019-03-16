@@ -1,6 +1,5 @@
 import React from 'react';
 
-import FlipMoveList from '../FlipMoveList';
 import Request from './Request';
 
 export default class RequestVoting extends React.Component {
@@ -19,11 +18,9 @@ export default class RequestVoting extends React.Component {
         </p>
 
         {channelRequests.length ?
-          <FlipMoveList>
-            {channelRequests.map(request =>
-              <Request key={request._id} request={request} />
-            )}
-          </FlipMoveList> 
+          channelRequests.map(request =>
+            <Request key={request._id} request={request} />
+          )
         : <p>None so far!</p>
         }
         

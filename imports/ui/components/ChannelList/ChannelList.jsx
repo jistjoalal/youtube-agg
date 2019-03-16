@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import ChannelLink from './ChannelLink';
 import TitleBar from '../TitleBar';
-import FlipMoveList from '../FlipMoveList';
 
 export default ChannelList = ({ channels }) =>
   <div>
@@ -25,9 +24,7 @@ export default ChannelList = ({ channels }) =>
     </TitleBar>
 
     <div className="Section container bg-dark">
-      <FlipMoveList>
-        {renderChannels(channels)}
-      </FlipMoveList>
+      {renderChannels(channels)}
     </div>
     
   </div>

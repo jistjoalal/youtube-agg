@@ -63,8 +63,6 @@ todo:
 
 bugs:
 - inf scroll not working on mobile
-- flipmove leaving leftover elements
-  - currently just rendering as null, need to remove
 
 ideas:
 - log errors in production
