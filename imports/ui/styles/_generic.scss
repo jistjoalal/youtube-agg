@@ -27,3 +27,7 @@ body {
 .button-light {
   @extend .btn, .btn-secondary, .text-nowrap, .m-1;
 }
+
+.button-red {
+  @extend .btn, .btn-danger, .m-1;
+}

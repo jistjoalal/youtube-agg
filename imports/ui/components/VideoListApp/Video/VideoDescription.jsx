@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-const commaNum = n => n < 1000 ? n
-  : commaNum(~~(n / 1000)) + ','
-  + (n % 1000 + '').padStart(3, '0');
+import { commaNum } from '../../helpers';
 
 export default VideoDescription = ({ video }) => {
   

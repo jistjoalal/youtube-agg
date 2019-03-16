@@ -67,7 +67,12 @@ ideas:
 - log errors in production
 - loading/error when disconnected from server?
 - more channel data?
-  - (url, banner, subs, ttl views, post freq.)
-  - link to youtube channel somewhere
+  - calculate ttl views, post freq.
+  - social links
   - sort channels
+  - \# of notification subscribers?
+    - no point showing YT subs (confusing to user)
 - notifications for new videos?
+  - possible w/o account system?
+  - email list?
+  - PWA alerts?

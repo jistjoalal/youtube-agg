@@ -8,7 +8,11 @@ import $ from 'cheerio';
 
 // returns channel object
 export const parseChannel = html => {
-  const _id = parseAttr(html, '.yt-uix-subscription-button', 'data-channel-external-id');
+  const _id = parseAttr(
+    html, 
+    '.yt-uix-subscription-button', 
+    'data-channel-external-id'
+  );
   const title = parseAttr(html, '.appbar-nav-avatar', 'title');
   const avatar = parseAttr(html, '.appbar-nav-avatar', 'src');
   return {
@@ -85,7 +89,7 @@ const parsePostedTime = html => {
 // parse viewCount as int
 const parseViewCount = html => {
   const viewCount = parseChildText(html, '.yt-lockup-meta-info > li', 0); 
-  return +(viewCount.replace(/,/g, '').split(' ')[0]);
+  return parseCommaNum(viewCount);
 }
 
 // returns seconds (int) from duration string
@@ -103,16 +107,20 @@ const parseDuration = html => {
  */
 
 // returns int part of time string (s) matching unit (u)
-export const parseTimeUnit = (s, u) => {
+const parseTimeUnit = (s, u) => {
   const parse = s.match(new RegExp(`\\d+\\s${u}`));
   return parse ? +parse[0].split(' ')[0] : 0;
 }
 
-export const parseAttr = (html, target, attr) => {
+const parseCommaNum = s => {
+  return +(s.replace(/,/g, '').split(' ')[0]);
+}
+
+const parseAttr = (html, target, attr) => {
   return $(target, html)[0].attribs[attr];
 }
 
-export const parseChildText = (html, target, childIdx) => {
+const parseChildText = (html, target, childIdx) => {
   if (!$(target, html)[childIdx]) {
     throw new Meteor.Error(`Can't parse:\n${html}\n^ Couldn't parse`)
   }

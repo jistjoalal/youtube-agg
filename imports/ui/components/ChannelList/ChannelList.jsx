@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-import ChannelLink from './ChannelLink';
+import Channel from './Channel';
 import TitleBar from '../TitleBar';
 
 export default ChannelList = ({ channels }) =>
@@ -29,12 +29,9 @@ export default ChannelList = ({ channels }) =>
     </TitleBar>
 
     <div className="section">
-      {renderChannels(channels)}
+      {channels.map(channel =>
+        <Channel key={channel._id} {...channel} />
+      )}
     </div>
     
   </div>
-
-const renderChannels = (channels) =>
-  channels.map(channel =>
-    <ChannelLink key={channel._id} {...channel} />
-  )
