@@ -1,0 +1,10 @@
+.LoadingIcon {
+  font-size: 300%;
+  animation: spin 2000ms ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

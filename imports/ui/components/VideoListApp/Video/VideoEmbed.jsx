@@ -1,8 +1,6 @@
 import React from 'react';
-import { FaSpinner } from 'react-icons/fa';
 
-const LoadingIcon = _ =>
-  <FaSpinner className="LoadingIcon" />
+import LoadingIcon from '../../LoadingIcon';
 
 export default VideoEmbed = ({ _id }) =>
   <div className="VideoEmbed shadow">

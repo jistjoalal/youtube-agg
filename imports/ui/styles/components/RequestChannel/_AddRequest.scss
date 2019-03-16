@@ -1,0 +1,9 @@
+.AddRequest {
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .AddRequest {
+    width: 100%;
+  }
+}

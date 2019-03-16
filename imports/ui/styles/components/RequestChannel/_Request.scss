@@ -1,0 +1,10 @@
+.Request {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .Request {
+    flex-direction: column;
+  }
+}

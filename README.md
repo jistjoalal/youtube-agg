@@ -60,7 +60,11 @@ queries, so you may need to click the magic button more than once.
 - <s>channel requests</s>
 
 todo:
-- center video preview on mobile
+- refactor css into files and cleanup markup
+  ```css
+  @import "_bootstrap.scss";
+  button { @extend .btn; }
+  ```
 
 bugs:
 
