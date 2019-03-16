@@ -112,7 +112,14 @@ export default class VideoListApp extends React.Component {
     const { autoScroll } = this.state;
     const { scrollHeight, scrollTop, clientHeight }
       = e.target.scrollingElement;
-    const atBottom = scrollHeight - scrollTop === clientHeight;
+    const dif = scrollHeight - scrollTop;
+
+    // Pad end of page w/ 100 px for better UX
+    // and to account for weird viewports
+    // (some old phones have their own "padding"
+    // that messes w/ calculation)
+    const PAD = 100;
+    const atBottom = dif - clientHeight <= PAD;
     if (atBottom && autoScroll) {
       this.nextPage();
     }

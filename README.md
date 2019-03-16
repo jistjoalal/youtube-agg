@@ -60,9 +60,9 @@ queries, so you may need to click the magic button more than once.
 - <s>channel requests</s>
 
 todo:
+- center video preview on mobile
 
 bugs:
-- inf scroll not working on mobile
 
 ideas:
 - log errors in production
