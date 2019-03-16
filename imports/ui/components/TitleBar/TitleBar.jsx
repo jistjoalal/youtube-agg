@@ -11,6 +11,10 @@ export default TitleBar = ({ children, title }) =>
     
     {children}
 
+    {!Meteor.status().connected && Meteor.status().retryCount > 2 &&
+      <p className="badge badge-dark">Offline</p>
+    }
+
     {Meteor.isDevelopment &&
       <button
         className="button-dark"
