@@ -1,0 +1,29 @@
+
+body {
+  background: #e3e3e3;
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.section {
+  @extend .bg-dark, .container, .p-2; 
+  max-width: 1000px;
+}
+
+.input-text {
+  @extend .form-control, .m-1;
+}
+
+.alert-box {
+  @extend .alert, .alert-dark, .shadow, .m-3;
+}
+
+.button {
+  @extend .btn, .btn-dark, .m-1;
+}
+
+.button-light {
+  @extend .btn, .btn-secondary, .text-nowrap, .m-1;
+}

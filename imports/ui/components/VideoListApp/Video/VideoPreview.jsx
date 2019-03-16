@@ -4,7 +4,7 @@ import { FaYoutube } from 'react-icons/fa';
 import VideoDescription from './VideoDescription';
 
 export default VideoPreview = ({ video, open }) =>
-  <div className="VideoPreview p-2">
+  <div className="VideoPreview">
   
     <a href="" onClick={e => { e.preventDefault(); open(); }}>
       <div className="VideoPreview__play">

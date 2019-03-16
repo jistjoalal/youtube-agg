@@ -1,0 +1,7 @@
+.VideoPlayer {
+  @extend .w-100, .d-flex, .flex-column, .align-items-center, .mb-2;
+}
+
+.VideoPlayer__close {
+  @extend .btn, .btn-dark, .text-danger, .align-self-end, .mb-1;
+}

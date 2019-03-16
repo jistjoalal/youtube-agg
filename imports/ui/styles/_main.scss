@@ -1,23 +1,9 @@
 
-body {
-  background: #e3e3e3;
-}
+@import './generic';
 
-.serif {
-  font-family: 'Playfair Display', serif;
-}
-
-.Section {
-  max-width: 1000px;
-}
+@import './components/ChannelList/index';
+@import './components/RequestChannel/index';
+@import './components/TitleBar/index';
+@import './components/VideoListApp/index';
 
 @import './components/LoadingIcon';
-
-@import './components/Video/VideoEmbed';
-@import './components/Video/VideoPreview';
-
-@import './components/RequestChannel/RequestChannel';
-@import './components/RequestChannel/Request';
-@import './components/RequestChannel/AddRequest';
-@import './components/RequestChannel/RequestVoting';
-

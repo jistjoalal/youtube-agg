@@ -10,7 +10,7 @@ export default class AddRequest extends React.Component {
   render() {
     const { err } = this.state;
     return (
-      <div className="AddRequest mr-2 p-2">
+      <div className="AddRequest">
 
         <p className="lead">
           Someone Missing?

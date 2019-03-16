@@ -2,14 +2,14 @@ import React from 'react';
 import { FaInfinity } from 'react-icons/fa';
 
 export default PageControls = ({ autoScroll, nextPage, toggleAutoScroll }) =>
-  <div className="d-flex justify-content-around m-1 fixed-bottom">
-    <a className="btn btn-secondary shadow" href="#">
+  <div className="PageControls">
+    <a className="PageControls__button" href="#">
       Top
     </a>
-    <button className="btn btn-secondary shadow" onClick={nextPage}>
+    <button className="PageControls__button" onClick={nextPage}>
       More
     </button>
-    <button className={`btn btn-secondary shadow ${autoScroll ? 'active' : ''}`}
+    <button className={`PageControls__button ${autoScroll ? 'active' : ''}`}
       onClick={toggleAutoScroll}
     >
       Scroll {autoScroll ? <FaInfinity /> : '∞'}

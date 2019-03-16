@@ -17,9 +17,9 @@ export default class RequestChannel extends React.Component {
 
         <TitleBar title="Request a Channel"></TitleBar>
 
-        <div className="Section container bg-dark p-2">
+        <div className="section">
 
-          <div className="RequestChannel bg-light">
+          <div className="RequestChannel">
 
             <AddRequest />
 

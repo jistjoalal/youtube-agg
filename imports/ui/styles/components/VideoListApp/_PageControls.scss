@@ -1,0 +1,7 @@
+.PageControls {
+  @extend .d-flex, .justify-content-around, .fixed-bottom;
+}
+
+.PageControls__button {
+  @extend .button-light, .shadow;
+}

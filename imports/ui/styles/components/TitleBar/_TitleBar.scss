@@ -1,0 +1,7 @@
+.TitleBar {
+  @extend .navbar, .bg-secondary, .text-dark, .shadow, .justify-content-around;
+}
+
+.TitleBar__title {
+  @extend .serif, .mx-3, .my-0;
+}

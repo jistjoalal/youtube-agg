@@ -1,6 +1,11 @@
 .Request {
+  @extend .shadow-sm, .m-2, .bg-light, .border;
   display: flex;
   align-items: center;
+}
+
+.Request__title {
+  @extend .m-2, .text-truncate, .mw-100;
 }
 
 @media (max-width: 600px) {

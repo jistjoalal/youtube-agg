@@ -9,18 +9,18 @@ const COL_TEXT = {
 };
 
 const SortArrow = ({ reverse }) =>
-  <span className="ml-2">
-    {reverse ? <FaAngleUp className="mb-1" /> : <FaAngleDown />}
+  <span className="SortButtons__arrow">
+    {reverse ? <FaAngleUp className="SortButtons__up" /> : <FaAngleDown />}
   </span>
 
 const SortButton = ({ col, reverse, sortBy, change }) =>
-  <button className="btn btn-dark m-1" onClick={change(col)}>
+  <button className="button" onClick={change(col)}>
     {COL_TEXT[col]}
     {sortBy == col && <SortArrow reverse={reverse} />}
   </button>
 
 export default SortButtons = ({ ...rest }) =>
-  <div className="d-flex justify-content-center flex-wrap m-1">
+  <div className="SortButtons">
     {Object.keys(COL_TEXT).map(col =>
       <SortButton key={col} col={col} {...rest} />
     )}

@@ -13,7 +13,7 @@ export default VideoDescription = ({ video }) => {
   const url = `https://youtube.com/watch?v=${video._id}`;
   const vps = (video.viewsPerSec || 0).toFixed(2) + ' v/s';
   return (
-    <div className="d-flex flex-column justify-content-center">
+    <div className="VideoDescription">
       <a href={url} target="blank">
         <h4>{video.title}</h4>
       </a>

@@ -13,7 +13,7 @@ export default About = _ =>
 
     <TitleBar title="About"></TitleBar>
 
-    <div className="Section container bg-dark p-2">
+    <div className="section">
 
       <div className="jumbotron mb-2">
 
@@ -27,7 +27,7 @@ export default About = _ =>
         </p>
         
         <Link
-          className="btn btn-secondary"
+          className="button-light"
           to="/channels"
         >
           All IDW Channels
@@ -37,7 +37,7 @@ export default About = _ =>
 
         <a
           target="blank"
-          className="btn btn-secondary"
+          className="button-light"
           href="https://github.com/jistjoalal/youtube-agg"
         >
           <code>

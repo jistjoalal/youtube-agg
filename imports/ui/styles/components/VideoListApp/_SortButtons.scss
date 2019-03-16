@@ -1,0 +1,11 @@
+.SortButtons {
+  @extend .d-flex, .justify-content-center, .flex-wrap, .m-1;
+}
+
+.SortButtons__arrow {
+  @extend .ml-2;
+}
+
+.SortButtons__up {
+  @extend .mb-1;
+}

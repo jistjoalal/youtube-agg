@@ -6,9 +6,9 @@ import VideoDescription from './VideoDescription';
 
 export default VideoPlayer = ({ video, close }) =>
   <>
-    <div className="w-100 d-flex flex-column align-items-center mb-2">
+    <div className="VideoPlayer">
       <button
-        className="btn btn-dark text-danger align-self-end mb-1"
+        className="VideoPlayer__close"
         data-toggle="tooltip"
         title="Close"
         onClick={close}
@@ -17,7 +17,5 @@ export default VideoPlayer = ({ video, close }) =>
       </button>
       <VideoEmbed _id={video._id} />
     </div>
-    <div className="mx-4">
-      <VideoDescription video={video} />
-    </div>
+    <VideoDescription video={video} />
   </>

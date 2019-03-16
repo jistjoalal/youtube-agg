@@ -1,4 +1,5 @@
 .RequestVoting {
+  @extend .p-2, .border-top, .border-left, .w-50;
   width: 50%;
 }
 

@@ -4,7 +4,7 @@ import { FaGithub, FaHome, FaQuestion, FaTv } from 'react-icons/fa';
 
 const withTooltip = Component => ({ sel, ...rest }) =>
   <Component
-    className={`btn btn-secondary${sel ? ' active' : ''}`}
+    className={`button-light ${sel ? 'active' : ''}`}
     data-toggle="tooltip"
     {...rest}
   />
@@ -16,7 +16,7 @@ const TitleA = withTooltip(Anchor);
 
 export default TitleLinks = ({ title }) => {
   return (
-    <div className="m-1">
+    <div className="TitleLinks">
       <TitleLink
         to="/"
         title="Home"

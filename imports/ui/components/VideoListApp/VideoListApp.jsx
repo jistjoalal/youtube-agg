@@ -5,6 +5,7 @@ import TitleBar from '../TitleBar';
 import VideoList from './VideoList';
 import SortButtons from './SortButtons';
 import PageControls from './PageControls';
+import Search from './Search';
 
 export default class VideoListApp extends React.Component {
   constructor() {
@@ -39,18 +40,11 @@ export default class VideoListApp extends React.Component {
 
         <TitleBar title={title}>
 
-          <div className="m-1">
-            <form onSubmit={this.submitSearch}>
-              <input
-                className="form-control"
-                type="text"
-                name="searchTerm"
-                value={searchTerm}
-                onChange={this.searchChange}
-                placeholder="Search..."
-              />  
-            </form> 
-          </div>
+          <Search
+            searchTerm={searchTerm}
+            submit={this.submitSearch}
+            change={this.searchChange}
+          />
 
           <SortButtons
             sortBy={sortBy}

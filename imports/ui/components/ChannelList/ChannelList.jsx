@@ -17,13 +17,13 @@ export default ChannelList = ({ channels }) =>
         <span className="mr-2">
           Someone missing?
         </span>
-        <Link className="btn btn-dark" to="/request-channel">
+        <Link className="button" to="/request-channel">
           Request a channel
         </Link>
       </div>
     </TitleBar>
 
-    <div className="Section container bg-dark">
+    <div className="section">
       {renderChannels(channels)}
     </div>
     

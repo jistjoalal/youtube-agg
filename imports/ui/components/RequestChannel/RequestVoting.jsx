@@ -6,7 +6,7 @@ export default class RequestVoting extends React.Component {
   render() {
     const { channelRequests } = this.props;
     return (
-      <div className="RequestVoting p-2 border-top border-left">
+      <div className="RequestVoting">
 
         <p className="lead">
           Voting
