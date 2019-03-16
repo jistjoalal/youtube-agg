@@ -85,7 +85,7 @@ const parsePostedTime = html => {
 // parse viewCount as int
 const parseViewCount = html => {
   const viewCount = parseChildText(html, '.yt-lockup-meta-info > li', 0); 
-  return +viewCount.replace(/,/g, '').split(' ')[0];
+  return +(viewCount.replace(/,/g, '').split(' ')[0]);
 }
 
 // returns seconds (int) from duration string

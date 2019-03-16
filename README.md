@@ -62,9 +62,6 @@ queries, so you may need to click the magic button more than once.
 todo:
 
 bugs:
-- viewCount + viewsPerSec were null momentarily on live
-  - this led to viewCount being displayed as 'NaN' 
-  - it was a brand new video with potentially 0 views that caused it
 - inf scroll not working on mobile
 - flipmove leaving leftover elements
   - currently just rendering as null, need to remove
