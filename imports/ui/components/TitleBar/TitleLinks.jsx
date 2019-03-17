@@ -9,7 +9,13 @@ const withTooltip = Component => ({ sel, ...rest }) =>
     {...rest}
   />
 
-const Anchor = ({ ...rest }) => <a {...rest} />
+const Anchor = ({ href, ...rest }) => 
+  Meteor.isCordova ?
+    <a
+      onClick={_ => window.open(href, '_system')}
+      {...rest}
+    />
+  : <a target="_blank" href={href} {...rest} />
 
 const TitleLink = withTooltip(Link);
 const TitleA = withTooltip(Anchor);
@@ -42,7 +48,6 @@ export default TitleLinks = ({ title }) => {
       </TitleLink>
       
       <TitleA
-        target="blank"
         href="https://github.com/jistjoalal/youtube-agg"
         title="Source Code"
       >

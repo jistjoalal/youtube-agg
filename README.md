@@ -64,7 +64,15 @@ todo:
 bugs:
 
 ideas:
+- native mobile w/ meteor + cordova
+  - launch screen + other icons
+  - description info span
+  - fix anchor tags 
+  - publish to app store
+  - research ios dev - osx vm?
+  - meteor pwa?
 - notifications for new videos?
   - possible w/o account system?
   - email list?
   - PWA alerts?
+- higher quality thumbnails - possible w/o YT API?
