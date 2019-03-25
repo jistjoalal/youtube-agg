@@ -1,14 +1,12 @@
 /**
  * Basic service worker
  * - https://developers.google.com/web/fundamentals/primers/service-workers/
- * - implements simple cache
+ * - doesn't actually cache anything
+ * - A2H (add to home) requires a SW w/ fetch event registered
  */
 
 var CACHE_NAME = 'cache-v1';
-var urlsToCache = [
-  '/about',
-  '/channels',
-];
+var urlsToCache = [];
 
 self.addEventListener('install', function(event) {
   // Perform install steps

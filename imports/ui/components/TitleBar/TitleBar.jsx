@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TitleLinks from './TitleLinks';
-import InstallButton from './InstallButton';
 
 export default TitleBar = ({ children, title }) =>
   <nav className="TitleBar">
@@ -12,19 +11,17 @@ export default TitleBar = ({ children, title }) =>
 
     {children}
 
-    <InstallButton />
-
     {!Meteor.status().connected && Meteor.status().retryCount > 2 &&
       <p className="badge badge-dark">Offline</p>
     }
 
-    {Meteor.isDevelopment &&
+    {/* {Meteor.isDevelopment &&
       <button
         className="button-dark"
         onClick={_ => Meteor.call('videos.scrape')}
       >
         Scrape
       </button> 
-    }
+    } */}
 
   </nav>

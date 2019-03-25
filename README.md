@@ -40,6 +40,19 @@ appears in development mode.
 - this could take a minute or two, and youtube might reject some of your
 queries, so you may need to click the magic button more than once.
 
+# Dev notes
+
+## findings
+- MOBILE
+  - PWA > Native
+    - easier for user and dev
+      - no app store downloads/uploads
+      - no seperate build
+      - no seperate issues (PWA is chrome)
+    - however, some serious bugs w/ PWA
+      - caching? causes refresh loop (more below)
+    - pursue/document a fully functional PWA
+
 
 ## ideas / todos
 - <s>embedded playback</s>
@@ -60,25 +73,24 @@ queries, so you may need to click the magic button more than once.
 - <s>channel requests</s>
 
 todo:
-- native mobile w/ meteor + cordova
-  - <s>publish to app store</s>
+- PWA / mobile
   - noscript tag
   - burger menu
   - center video preview
   - launch screen + other icons
   - description info span
-  - video embed stuck on spinner
-  - research ios dev - osx vm?
+  - custom install button?
+    - default "mini-infobar" doesnt actually add to homescreen
+      just installs the app to the phone
 
 bugs:
 - infinite client refresh
+  - happens randomly in dev+prod!!!
   - clearing browser cache fixes
-  - so far only happens in dev
   - something about AppCache + meteor?
-  - simplified caching - seems to fix?
+  - no caching - seems to fix?
 
 ideas:
-- more adv. service worker caching
 - analytics
   - heroku addons?
   - google?
