@@ -63,12 +63,15 @@ todo:
 - native mobile w/ meteor + cordova
   - <s>publish to app store</s>
   - burger menu
+  - center video preview
   - launch screen + other icons
   - description info span
   - video embed stuck on spinner
   - research ios dev - osx vm?
 
 bugs:
+- infinite client refresh in dev
+  - idk how i fixed it (scary)
 
 ideas:
 - more adv. service worker caching
