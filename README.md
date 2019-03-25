@@ -62,6 +62,7 @@ queries, so you may need to click the magic button more than once.
 todo:
 - native mobile w/ meteor + cordova
   - <s>publish to app store</s>
+  - noscript tag
   - burger menu
   - center video preview
   - launch screen + other icons
@@ -70,8 +71,11 @@ todo:
   - research ios dev - osx vm?
 
 bugs:
-- infinite client refresh in dev
-  - idk how i fixed it (scary)
+- infinite client refresh
+  - clearing browser cache fixes
+  - so far only happens in dev
+  - something about AppCache + meteor?
+  - simplified caching - seems to fix?
 
 ideas:
 - more adv. service worker caching
