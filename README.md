@@ -65,6 +65,7 @@ bugs:
 
 ideas:
 - native mobile w/ meteor + cordova
+  - burger menu
   - launch screen + other icons
   - description info span
   - fix anchor tags 
