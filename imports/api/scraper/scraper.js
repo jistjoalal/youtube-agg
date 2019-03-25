@@ -15,15 +15,16 @@ const scrapeChannel = _id => {
   const reqUrl = `https://www.youtube.com/channel/${_id}/videos`;
   fetch(reqUrl)
     .then(res => res.text())
-    .then(html => {
-        // channel
-        const channel = parseChannel(html);
-        updateChannel(channel);
-        // videos
-        parseVideos(html, channel).forEach(updateVideo);
-
-    })
+    .then(parseAndUpdate)
     .catch(err => console.log(err))
+}
+
+const parseAndUpdate = html => {
+  // channel
+  const channel = parseChannel(html);
+  updateChannel(channel);
+  // videos
+  parseVideos(html, channel).forEach(updateVideo);
 }
 
 // submit results of scraping to Channels collection
