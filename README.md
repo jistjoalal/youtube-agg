@@ -74,6 +74,8 @@ queries, so you may need to click the magic button more than once.
 - <s>channel requests</s>
 
 todo:
+- SEO
+  - meta descriptions w/ helmet
 - PWA / mobile
   - burger menu
   - launch screen + other icons
