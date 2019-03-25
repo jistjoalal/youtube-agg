@@ -52,6 +52,7 @@ queries, so you may need to click the magic button more than once.
     - however, some serious bugs w/ PWA
       - caching? causes refresh loop (more below)
     - pursue/document a fully functional PWA
+      - google PWA checklist + lighthouse audit
 
 
 ## ideas / todos
@@ -74,11 +75,8 @@ queries, so you may need to click the magic button more than once.
 
 todo:
 - PWA / mobile
-  - noscript tag
   - burger menu
-  - center video preview
   - launch screen + other icons
-  - description info span
   - custom install button?
     - default "mini-infobar" doesnt actually add to homescreen
       just installs the app to the phone
