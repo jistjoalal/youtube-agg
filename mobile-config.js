@@ -4,7 +4,7 @@ App.info({
   author: 'Jist',
   email: 'jistjoalal@gmail.com',
   website: 'https://github.com/jistjoalal',
-  version: "0.0.13",
+  version: "0.0.15",
 });
 
 App.icons({
@@ -14,17 +14,6 @@ App.icons({
 
 App.setPreference('SetFullscreen', true);
 
-// youtube embed + links
-App.accessRule('https://youtube.com/*');
-App.accessRule('https://youtube.com/*', { type: 'navigation' });
-App.accessRule('https://youtube.com/*', { type: 'intent' });
-// youtube thumbnails
-App.accessRule('https://i.ytimg.com/*');
-App.accessRule('https://yt3.ggpht.com/*');
-
-// nytimes link in about page
-App.accessRule('https://www.nytimes.com/*', { type: 'intent' });
-
-// github link
-App.accessRule('https://github.com/*', { type: 'intent' });
-
+App.accessRule('*');
+App.accessRule('*', { type: 'navigation' });
+App.accessRule('*', { type: 'intent' });

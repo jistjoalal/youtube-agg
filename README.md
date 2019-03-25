@@ -65,14 +65,15 @@ todo:
   - burger menu
   - launch screen + other icons
   - description info span
-  - fix anchor tags 
-    - CORS not allowed in cordova
-      - use App.accessRule in mobile-config.js
+  - video embed stuck on spinner
   - research ios dev - osx vm?
 
 bugs:
 
 ideas:
+- analytics
+  - heroku addons?
+  - google?
 - notifications for new videos?
   - possible w/o account system?
   - email list?
