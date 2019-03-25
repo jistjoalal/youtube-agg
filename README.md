@@ -71,6 +71,7 @@ todo:
 bugs:
 
 ideas:
+- more adv. service worker caching
 - analytics
   - heroku addons?
   - google?
