@@ -60,18 +60,19 @@ queries, so you may need to click the magic button more than once.
 - <s>channel requests</s>
 
 todo:
-
-bugs:
-
-ideas:
 - native mobile w/ meteor + cordova
+  - <s>publish to app store</s>
   - burger menu
   - launch screen + other icons
   - description info span
   - fix anchor tags 
-  - publish to app store
+    - CORS not allowed in cordova
+      - use App.accessRule in mobile-config.js
   - research ios dev - osx vm?
-  - meteor pwa?
+
+bugs:
+
+ideas:
 - notifications for new videos?
   - possible w/o account system?
   - email list?

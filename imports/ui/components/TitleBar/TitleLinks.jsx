@@ -10,12 +10,7 @@ const withTooltip = Component => ({ sel, ...rest }) =>
   />
 
 const Anchor = ({ href, ...rest }) => 
-  Meteor.isCordova ?
-    <a
-      onClick={_ => window.open(href, '_system')}
-      {...rest}
-    />
-  : <a target="_blank" href={href} {...rest} />
+  <a target="_blank" href={href} {...rest} />
 
 const TitleLink = withTooltip(Link);
 const TitleA = withTooltip(Anchor);

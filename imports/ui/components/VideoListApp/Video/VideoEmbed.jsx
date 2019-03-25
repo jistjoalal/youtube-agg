@@ -3,7 +3,7 @@ import React from 'react';
 import LoadingIcon from '../../LoadingIcon';
 
 export default VideoEmbed = ({ _id }) => {
-  const url = `https://www.youtube.com/embed/${_id}?autoplay=1`;
+  const url = `https://youtube.com/embed/${_id}?autoplay=1`;
   return (
     <div className="VideoEmbed">
   
