@@ -21,6 +21,7 @@
 }
 
 .VideoPreview__thumb {
+  @extend .shadow;
   width: 200px;
   height: 112px;
   margin-right: 8px;
@@ -29,7 +30,7 @@
 @media (max-width: 600px) {
   .VideoPreview {
     flex-direction: column;
-    justify-self: center;
+    align-items: center;
   }
   .VideoPreview__thumb, .VideoPreview__play {
     width: 300px;

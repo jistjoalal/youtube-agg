@@ -19,6 +19,4 @@ react-meteor-data       # React higher-order component for reactively tracking M
 fourseven:scss
 tracker
 littledata:synced-cron
-meteortesting:mocha
-cultofcoders:mocha
 force-ssl

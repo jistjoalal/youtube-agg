@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import {
+  FaHourglassHalf,
+  FaRegEye,
+  FaFire,
+  FaCloudUploadAlt
+} from 'react-icons/fa';
 
 import { commaNum } from '../../helpers';
 
@@ -28,9 +34,20 @@ export default VideoDescription = ({ video }) => {
         </h5>
       </Link>
       
-      <span className="text-muted">
-        {duration} - {views} ({vps}) - {postedAgo}
-      </span>
+      <div className="VideoDescription__text">
+        <div>
+          <FaCloudUploadAlt /> {postedAgo}
+        </div>
+        <div>
+          <FaFire /> ({vps})
+        </div>
+        <div>
+          <FaHourglassHalf /> {duration}
+        </div>
+        <div>
+          <FaRegEye /> {views}
+        </div>
+      </div>
       
     </div>
   );

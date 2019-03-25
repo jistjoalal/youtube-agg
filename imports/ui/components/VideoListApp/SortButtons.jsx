@@ -1,11 +1,18 @@
 import React from 'react';
-import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import {
+  FaHourglassHalf,
+  FaRegEye,
+  FaFire,
+  FaCloudUploadAlt,
+  FaAngleUp,
+  FaAngleDown,
+} from 'react-icons/fa';
 
 const COL_TEXT = {
-  'postedTime': 'Upload Date',
-  'viewsPerSec': 'Trending',
-  'duration': 'Duration',
-  'viewCount': 'Views',
+  'postedTime': <span><FaCloudUploadAlt /> Upload Date</span>,
+  'viewsPerSec': <span><FaFire /> Trending</span>,
+  'duration': <span><FaHourglassHalf /> Duration</span>,
+  'viewCount': <span><FaRegEye /> Views</span>,
 };
 
 const SortArrow = ({ reverse }) =>

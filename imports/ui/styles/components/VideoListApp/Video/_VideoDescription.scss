@@ -1,3 +1,16 @@
 .VideoDescription {
-  @extend .d-flex, .flex-column, .justify-content-center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.VideoDescription__text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  div {
+    @extend .text-muted, .text-nowrap, .mr-3;
+  }
+}
+
