@@ -14,7 +14,7 @@ export default TitleBar = ({ children, title }) =>
     {!Meteor.status().connected && Meteor.status().retryCount > 2 &&
       <p className="badge badge-dark">Offline</p>
     }
-
+{/* 
     {Meteor.isDevelopment &&
       <button
         className="button-dark"
@@ -22,6 +22,6 @@ export default TitleBar = ({ children, title }) =>
       >
         Scrape
       </button> 
-    }
+    } */}
 
   </nav>
