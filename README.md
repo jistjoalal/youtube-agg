@@ -72,16 +72,14 @@ queries, so you may need to click the magic button more than once.
 - <s>"view growth" tracking</s>
 - <s>search bar</s>
 - <s>channel requests</s>
+- <s>PWA</s>
 
 todo:
-- SEO
-  - meta descriptions w/ helmet
-- PWA / mobile
-  - burger menu
-  - launch screen + other icons
-  - custom install button?
-    - default "mini-infobar" doesnt actually add to homescreen
-      just installs the app to the phone
+- meta descriptions w/ helmet
+- burger menu
+- launch screen + other icons
+- custom install button?
+- lighthouse audit checklists
 
 bugs:
 - infinite client refresh
@@ -91,9 +89,7 @@ bugs:
   - no caching - seems to fix?
 
 ideas:
-- analytics
-  - heroku addons?
-  - google?
+- google analytics
 - notifications for new videos?
   - possible w/o account system?
   - email list?
