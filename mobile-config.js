@@ -4,7 +4,7 @@ App.info({
   author: 'Jist',
   email: 'jistjoalal@gmail.com',
   website: 'https://github.com/jistjoalal',
-  version: "0.0.11",
+  version: "0.0.12",
 });
 
 App.icons({
