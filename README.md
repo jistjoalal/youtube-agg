@@ -80,11 +80,17 @@ todo:
 - meta descriptions w/ helmet
 - launch screen + other icons
 - lighthouse audit checklists
+  - HTTP/2
+    - not possible w/ heroku?
+    - check out Dig Ocean
+  - accessibility
 - custom install button
   - only shows on initial page load (good)
   - doesnt actually add to home, just installs (bad)
   - test on more phones
   - verify install?
+- react-icons majorly bloating bundle
+  - check out FA official pkg
 
 bugs:
 - infinite client refresh

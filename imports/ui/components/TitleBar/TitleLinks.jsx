@@ -13,7 +13,7 @@ const withTooltip = Component => ({ sel, ...rest }) =>
   />
 
 const Anchor = ({ href, ...rest }) => 
-  <a target="_blank" href={href} {...rest} />
+  <a target="_blank" rel="noopener" href={href} {...rest} />
 
 const TitleLink = withTooltip(Link);
 const TitleA = withTooltip(Anchor);

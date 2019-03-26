@@ -7,6 +7,7 @@
 
 .TitleBar__title {
   @extend .serif, .mx-3;
+  font-display: swap;
 }
 
 .TitleBar__collapse {

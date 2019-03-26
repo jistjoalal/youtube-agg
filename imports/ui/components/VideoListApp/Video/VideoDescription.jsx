@@ -22,7 +22,7 @@ export default VideoDescription = ({ video }) => {
   return (
     <div className="VideoDescription">
 
-      <a href={url} target="blank">
+      <a href={url} target="_blank" rel="noopener">
         <h4>
           {video.title}
         </h4>

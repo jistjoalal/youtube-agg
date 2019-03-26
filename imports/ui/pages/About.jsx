@@ -37,6 +37,7 @@ export default About = _ =>
 
         <a
           target="blank"
+          rel="noopener"
           className="button-light"
           href="https://github.com/jistjoalal/youtube-agg"
         >
@@ -64,6 +65,7 @@ export default About = _ =>
           <a
             href="https://www.nytimes.com/2018/05/08/opinion/intellectual-dark-web.html"
             target="blank"
+            rel="noopener"
           >
             - Meet the Renegades of the Intellectual Dark Web - Bari Weiss
           </a>
