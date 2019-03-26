@@ -5,7 +5,8 @@ import {
   FaHourglassHalf,
   FaRegEye,
   FaFire,
-  FaCloudUploadAlt
+  FaCloudUploadAlt,
+  FaTv,
 } from 'react-icons/fa';
 
 import { commaNum } from '../../helpers';
@@ -22,33 +23,38 @@ export default VideoDescription = ({ video }) => {
   return (
     <div className="VideoDescription">
 
-      <a href={url} target="_blank" rel="noopener">
-        <h4>
-          {video.title}
-        </h4>
+      <a href={url} target="_blank" rel="noopener"
+        className="VideoDescription__title"
+      >
+        {video.title}
       </a>
 
-      <Link to={`/channel/${video.channelId}/`}>
-        <h5 className="text-muted">
-          {video.channelTitle}
-        </h5>
-      </Link>
-      
-      <div className="VideoDescription__text">
-        <div>
-          <FaCloudUploadAlt /> {postedAgo}
-        </div>
-        <div>
-          <FaFire /> ({vps})
-        </div>
-        <div>
-          <FaHourglassHalf /> {duration}
-        </div>
-        <div>
-          <FaRegEye /> {views}
-        </div>
+      <div className="VideoDescription__info">
+
+        <Link
+          to={`/channel/${video.channelId}/`}
+          className="VideoDescription__channel"
+        >
+          <FaTv /> {video.channelTitle}
+        </Link>
+        
+        <div className="VideoDescription__text">
+          <div>
+            <FaCloudUploadAlt /> {postedAgo}
+          </div>
+          <div>
+            <FaFire /> ({vps})
+          </div>
+          <div>
+            <FaHourglassHalf /> {duration}
+          </div>
+          <div>
+            <FaRegEye /> {views}
+          </div>
+        </div> 
+        
       </div>
-      
+
     </div>
   );
 }

@@ -77,8 +77,8 @@ queries, so you may need to click the magic button more than once.
 - <s>PWA</s>
 
 todo:
-- meta descriptions w/ helmet
-- launch screen + other icons
+- channel links should bring page to top
+- display channel prof pic in videolist
 - lighthouse audit checklists
   - HTTP/2
     - not possible w/ heroku?

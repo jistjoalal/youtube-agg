@@ -2,11 +2,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  margin-left: 8px;
+}
+
+.VideoDescription__info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  margin-left: 12px;
+}
+
+.VideoDescription__title {
+  @extend .text-light, .h5;
+  font-weight: 400;
 }
 
 .VideoDescription__text {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   
   div {
@@ -14,3 +29,18 @@
   }
 }
 
+.VideoDescription__channel {
+  @extend .h6, .text-info, .text-nowrap;
+}
+
+@media (max-width: 600px) {
+  .VideoDescription {
+    margin-left: 0px;
+  }
+  .VideoDescription__title {
+    text-align: center;
+  }
+  .VideoDescription__channel {
+    text-align: center;
+  }
+}
