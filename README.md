@@ -79,6 +79,7 @@ todo:
 - burger menu
 - launch screen + other icons
 - custom install button?
+  - auto install minibar is weird, read more docs
 - lighthouse audit checklists
 
 bugs:
@@ -90,6 +91,7 @@ bugs:
 
 ideas:
 - google analytics
+  - how to get real-time to update w/ SPA routing
 - notifications for new videos?
   - possible w/o account system?
   - email list?
