@@ -77,7 +77,7 @@ queries, so you may need to click the magic button more than once.
 - <s>PWA</s>
 
 todo:
-- channel links should bring page to top
+- channel links should reflect if on that page
 - display channel prof pic in videolist
 - lighthouse audit checklists
   - HTTP/2
