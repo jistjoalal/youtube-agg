@@ -1,7 +1,14 @@
 .SortButtons {
-  @extend .d-flex, .justify-content-center, .flex-wrap, .m-1;
+  @extend .m-1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .SortButtons__arrow {
   @extend .ml-2;
+}
+
+.SortButtons__btn {
+  @extend .button-dark, .text-nowrap;
 }

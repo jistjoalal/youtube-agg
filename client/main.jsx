@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 
 import Routes from '/imports/Routes';
 
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {

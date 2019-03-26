@@ -1,7 +1,24 @@
 .TitleBar {
-  @extend .navbar, .bg-secondary, .text-dark, .shadow, .justify-content-around;
+  @extend .navbar, .navbar-light, .navbar-expand-lg,
+    .bg-secondary, .text-dark, .shadow;
+  display: flex;
+  justify-content: space-between;
 }
 
 .TitleBar__title {
-  @extend .serif, .mx-3, .my-0;
+  @extend .serif, .mx-3;
+}
+
+.TitleBar__collapse {
+  @extend .collapse, .navbar-collapse;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100;
+  justify-content: space-around;
+}
+
+@media (max-width: 600px) {
+  .TitleBar {
+    flex-direction: column;
+  }
 }

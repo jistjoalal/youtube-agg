@@ -15,7 +15,6 @@ export default class InstallButton extends React.Component {
   }
   componentDidMount() {
     window.addEventListener('beforeinstallprompt', (e) => {
-      console.log('beforeinstallprompt')
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
       // Stash the event so it can be triggered later.
@@ -30,9 +29,11 @@ export default class InstallButton extends React.Component {
       this.state.show &&
         <button
           className="InstallButton"
+          data-toggle="tooltip"
+          title="Install App"
           onClick={this.install}
         >
-          Install App <FaDownload />
+          <FaDownload />
         </button>
     );
   }

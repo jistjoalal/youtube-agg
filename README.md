@@ -49,11 +49,13 @@ queries, so you may need to click the magic button more than once.
       - no app store downloads/uploads
       - no seperate build
       - no seperate issues (PWA is chrome)
-    - however, some serious bugs w/ PWA
-      - caching? causes refresh loop (more below)
-    - pursue/document a fully functional PWA
-      - google PWA checklist + lighthouse audit
-
+    - google PWA docs + lighthouse audit = guide
+    - basically just:
+      - HTTPS
+      - service worker registers w/ fetch event
+      - webmanifest w/ reqts.
+      - `beforeinstallprompt` will fire automagically
+    - install button right on the site
 
 ## ideas / todos
 - <s>embedded playback</s>
@@ -76,11 +78,13 @@ queries, so you may need to click the magic button more than once.
 
 todo:
 - meta descriptions w/ helmet
-- burger menu
 - launch screen + other icons
-- custom install button?
-  - auto install minibar is weird, read more docs
 - lighthouse audit checklists
+- custom install button
+  - only shows on initial page load (good)
+  - doesnt actually add to home, just installs (bad)
+  - test on more phones
+  - verify install?
 
 bugs:
 - infinite client refresh

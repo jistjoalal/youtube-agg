@@ -23,7 +23,7 @@ const SortArrow = ({ reverse }) =>
   </span>
 
 const SortButton = ({ col, reverse, sortBy, change }) =>
-  <button className="button-dark" onClick={change(col)}>
+  <button className="SortButtons__btn" onClick={change(col)}>
     {COL_TEXT[col]}
     {sortBy == col &&
       <SortArrow reverse={reverse} />

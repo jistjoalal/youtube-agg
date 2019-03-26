@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaHome, FaQuestion, FaTv } from 'react-icons/fa';
 
+import InstallButton from './InstallButton';
+import ToggleButton from './ToggleButton';
+
 const withTooltip = Component => ({ sel, ...rest }) =>
   <Component
     className={`button-light ${sel ? 'active' : ''}`}
@@ -18,6 +21,11 @@ const TitleA = withTooltip(Anchor);
 export default TitleLinks = ({ title }) => {
   return (
     <div className="TitleLinks">
+
+      <ToggleButton />
+
+      <InstallButton />
+      
       <TitleLink
         to="/"
         title="Home"
