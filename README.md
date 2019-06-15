@@ -1,13 +1,12 @@
 # IDW-agg
-Youtube subscriptions suck. Let's make a youtube scraper/aggregate for 
+
+Youtube subscriptions suck. Let's make a youtube scraper/aggregate for
 [IDW](https://en.wikipedia.org/wiki/Eric_Weinstein#Intellectual_dark_web)-related videos.
 
-
-## live
-[https://idw.herokuapp.com/](https://idw.herokuapp.com/)
-
+[![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://idw.herokuapp.com/)](https://idw.herokuapp.com/)
 
 ## overview
+
 Youtube API looks daunting so I built an old-fashioned scraper/parser using
 [cheerio](https://github.com/cheeriojs)
 that grabs the most recent videos every hour using
@@ -25,24 +24,27 @@ and rendered to the client using
   - [imports/Routes.jsx](https://github.com/jistjoalal/youtube-agg/blob/master/imports/Routes.jsx)
     - [imports/ui/pages](https://github.com/jistjoalal/youtube-agg/blob/master/imports/ui/pages)
 
-
 ## local
+
 ```sh
 git clone https://github.com/jistjoalal/youtube-agg.git
 cd youtube-agg
 npm install
 meteor
 ```
+
 ![scrape button](https://i.gyazo.com/f69cb90fcf058b402f71c57259f2e576.png)
+
 - the project doesn't come with a populated db. To have your
-server search for videos, click the scrape button that only
-appears in development mode.
+  server search for videos, click the scrape button that only
+  appears in development mode.
 - this could take a minute or two, and youtube might reject some of your
-queries, so you may need to click the magic button more than once.
+  queries, so you may need to click the magic button more than once.
 
 # Dev notes
 
 ## findings
+
 - MOBILE
   - PWA > Native
     - easier for user and dev
@@ -58,6 +60,7 @@ queries, so you may need to click the magic button more than once.
     - install button right on the site
 
 ## ideas / todos
+
 - <s>embedded playback</s>
 - <s>sorting</s>
 - <s>pagination</s>
@@ -77,6 +80,7 @@ queries, so you may need to click the magic button more than once.
 - <s>PWA</s>
 
 todo:
+
 - channel links should reflect if on that page
 - display channel prof pic in videolist
 - lighthouse audit checklists
@@ -93,6 +97,7 @@ todo:
   - check out FA official pkg
 
 bugs:
+
 - infinite client refresh
   - happens randomly in dev+prod!!!
   - clearing browser cache fixes
@@ -100,6 +105,7 @@ bugs:
   - no caching - seems to fix?
 
 ideas:
+
 - google analytics
   - how to get real-time to update w/ SPA routing
 - notifications for new videos?
