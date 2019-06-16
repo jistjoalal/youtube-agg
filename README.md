@@ -3,7 +3,7 @@
 Youtube subscriptions suck. Let's make a youtube scraper/aggregate for
 [IDW](https://en.wikipedia.org/wiki/Eric_Weinstein#Intellectual_dark_web)-related videos.
 
-[![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://idw.herokuapp.com/)](https://idw.herokuapp.com/)
+[![Screenshot](https://jist-screenshotter.herokuapp.com/v1/desktop/https://idw.herokuapp.com/)](https://idw.herokuapp.com/)
 
 ## overview
 
