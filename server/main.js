@@ -1,9 +1,9 @@
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from "meteor/meteor";
 
-import '../imports/config/simple-schema-config';
+import "../imports/config/simple-schema-config";
 
-import scrape from '../imports/api/scraper';
-import ChannelRequests from '../imports/api/channelRequests';
+import scrape from "../imports/api/scraper";
+import ChannelRequests from "../imports/api/channelRequests";
 
 Meteor.startup(_ => {
   if (Meteor.isDevelopment) {
@@ -12,15 +12,15 @@ Meteor.startup(_ => {
 
   if (Meteor.isProduction) {
     scrape();
-    schedule(scrape, 'every 1 hour');
+    schedule(scrape, "every 1 hour");
   }
 });
 
 const schedule = (job, str) => {
   SyncedCron.add({
-    name: 'Video Scraper',
+    name: "Video Scraper",
     schedule: parser => parser.text(str),
-    job,
+    job
   });
   SyncedCron.start();
-}
+};

@@ -1,13 +1,12 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
-import Videos from '../videos';
-import Channels from '../channels';
-import { parseVideos, parseChannel } from './parser';
-import CHANNEL_IDS from './channelIds';
-
+import Videos from "../videos";
+import Channels from "../channels";
+import { parseVideos, parseChannel } from "./parser";
+import CHANNEL_IDS from "./channelIds";
 
 // Scrapes all channels
-export default scrape = _ => CHANNEL_IDS.forEach(scrapeChannel);
+export default (scrape = _ => CHANNEL_IDS.forEach(scrapeChannel));
 
 // parse a youtube channel's 'videos' page
 // save scraped data to db
@@ -16,8 +15,8 @@ const scrapeChannel = _id => {
   fetch(reqUrl)
     .then(res => res.text())
     .then(parseAndUpdate)
-    .catch(err => console.log(err))
-}
+    .catch(err => console.log(err));
+};
 
 const parseAndUpdate = html => {
   // channel
@@ -25,7 +24,7 @@ const parseAndUpdate = html => {
   updateChannel(channel);
   // videos
   parseVideos(html, channel).forEach(updateVideo);
-}
+};
 
 // submit results of scraping to Channels collection
 const updateChannel = channel => {
@@ -34,7 +33,7 @@ const updateChannel = channel => {
     return Channels.update(q, channel);
   }
   return Channels.insert(channel);
-}
+};
 
 // submit results of scraping to Videos collection
 const updateVideo = vid => {
@@ -49,8 +48,8 @@ const updateVideo = vid => {
     // since it's a weird reverse timeago calculation
     // it's more accurate the less it's updated
     vid.postedTime = cur.postedTime;
-    
-    vid.viewsPerSec = viewsPerSec(vid)
+
+    vid.viewsPerSec = viewsPerSec(vid);
     return Videos.update(q, vid);
   }
 
@@ -59,7 +58,7 @@ const updateVideo = vid => {
     vid.viewsPerSec = viewsPerSec(vid);
     return Videos.insert(vid);
   }
-}
+};
 
 /**
  * Calculate views per second
@@ -70,5 +69,4 @@ const updateVideo = vid => {
 const viewsPerSec = ({ postedTime, viewCount }) => {
   const deltaTime = (Date.now() - postedTime) / 1000;
   return viewCount / deltaTime;
-}
-
+};
