@@ -1,45 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import moment from 'moment';
+import React from "react";
+import { Link } from "react-router-dom";
+import moment from "moment";
 import {
   FaHourglassHalf,
   FaRegEye,
   FaFire,
   FaCloudUploadAlt,
-  FaTv,
-} from 'react-icons/fa';
+  FaTv
+} from "react-icons/fa";
 
-const commaNum = n => n < 1000 ? n
-  : commaNum(~~(n / 1000)) + ','
-  + (n % 1000 + '').padStart(3, '0');
-
-export default VideoDescription = ({ video }) => {
-  
+export default (VideoDescription = ({ video }) => {
   // render db-data for display
   const postedAgo = moment(video.postedTime).fromNow();
-  const views = commaNum(video.viewCount) + ' views';
-  const duration = moment.duration(video.duration, 'seconds').humanize();
+  const views = video.viewCount.toLocaleString() + " views";
+  const duration = moment.duration(video.duration, "seconds").humanize();
   const url = `https://youtube.com/watch?v=${video._id}`;
-  const vps = (video.viewsPerSec || 0).toFixed(2) + ' v/s';
-  
+  const vps = (video.viewsPerSec || 0).toFixed(2) + " v/s";
+
   return (
     <div className="VideoDescription">
-
-      <a href={url} target="_blank" rel="noopener"
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener"
         className="VideoDescription__title"
       >
         {video.title}
       </a>
 
       <div className="VideoDescription__info">
-
         <Link
           to={`/channel/${video.channelId}/`}
           className="VideoDescription__channel"
         >
           <FaTv /> {video.channelTitle}
         </Link>
-        
+
         <div className="VideoDescription__text">
           <div>
             <FaCloudUploadAlt /> {postedAgo}
@@ -53,10 +49,8 @@ export default VideoDescription = ({ video }) => {
           <div>
             <FaRegEye /> {views}
           </div>
-        </div> 
-        
+        </div>
       </div>
-
     </div>
   );
-}
+});
