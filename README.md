@@ -39,7 +39,6 @@ Automatic Deploys to Heroku
 
 ## ideas / todos
 
-- channel links should reflect if on that page
 - display channel prof pic in videolist
 - react-icons majorly bloating bundle
   - check out FA official pkg

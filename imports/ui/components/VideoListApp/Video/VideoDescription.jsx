@@ -16,6 +16,7 @@ export default (VideoDescription = ({ video }) => {
   const duration = moment.duration(video.duration, "seconds").humanize();
   const url = `https://youtube.com/watch?v=${video._id}`;
   const vps = (video.viewsPerSec || 0).toFixed(2) + " v/s";
+  const onChannelPage = location.href.includes(video.channelId);
 
   return (
     <div className="VideoDescription">
@@ -31,7 +32,9 @@ export default (VideoDescription = ({ video }) => {
       <div className="VideoDescription__info">
         <Link
           to={`/channel/${video.channelId}/`}
-          className="VideoDescription__channel"
+          className={
+            "VideoDescription__channel" + (onChannelPage ? "--active" : "")
+          }
         >
           <FaTv /> {video.channelTitle}
         </Link>

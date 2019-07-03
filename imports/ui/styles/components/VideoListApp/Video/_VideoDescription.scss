@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  
+
   div {
     @extend .text-muted, .text-nowrap, .mr-3;
   }
@@ -31,6 +31,11 @@
 
 .VideoDescription__channel {
   @extend .h6, .text-info, .text-nowrap;
+}
+
+.VideoDescription__channel--active {
+  @extend .VideoDescription__channel;
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
