@@ -14,5 +14,6 @@ export default (CHANNEL_IDS = [
   "UC-yewGHQbNFpDrGM0diZOLA",
   "UCLH7qUqM0PLieCVaHA7RegA",
   "UCi5N_uAqApEUIlg32QzkPlg",
-  "UCriIuQZpMi6gEt_2P7xKCww"
+  "UCriIuQZpMi6gEt_2P7xKCww",
+  "UCpqDUjTsof-kTNpnyWper_Q"
 ]);
