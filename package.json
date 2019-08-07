@@ -5,7 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.5",
+    "@babel/runtime": "^7.5.5",
     "bootstrap": "^4.3.1",
     "cheerio": "^1.0.0-rc.3",
     "jquery": "^3.4.1",
